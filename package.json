@@ -1,0 +1,48 @@
+{
+  "name": "portfolio-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:prod": "NODE_ENV=production next build",
+    "start:prod": "NODE_ENV=production next start",
+    "start:production": "node scripts/start-production.js",
+    "seed": "node scripts/seed-database.js",
+    "backup": "node scripts/backup-data.js",
+    "restore": "node scripts/restore-data.js",
+    "deploy": "npm run build:prod && npm run seed",
+    "deploy:full": "node scripts/deploy.js",
+    "health-check": "node scripts/health-check.js",
+    "logs:clean": "node scripts/clean-logs.js",
+    "validate-config": "node scripts/validate-config.js",
+    "monitor": "node -e \"console.log(require('./lib/monitoring').getSystemStatus())\"",
+    "status": "npm run health-check && npm run monitor",
+    "pre-deploy": "npm run validate-config && npm run health-check",
+    "verify-deployment": "node scripts/verify-deployment.js",
+    "post-deploy": "npm run verify-deployment",
+    "deploy:vercel": "node scripts/deploy-vercel.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "formidable": "^3.5.4",
+    "joi": "^18.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "next": "13.4.9",
+    "next-auth": "^4.24.13",
+    "nodemailer": "^7.0.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-quill": "^2.0.0",
+    "sharp": "^0.34.5",
+    "winston": "^3.18.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.4.14",
+    "postcss": "8.4.24",
+    "tailwindcss": "3.4.7"
+  }
+}
