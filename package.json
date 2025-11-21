@@ -23,7 +23,17 @@
     "pre-deploy": "npm run validate-config && npm run health-check",
     "verify-deployment": "node scripts/verify-deployment.js",
     "post-deploy": "npm run verify-deployment",
-    "deploy:vercel": "node scripts/deploy-vercel.js"
+    "deploy:vercel": "node scripts/deploy-vercel.js",
+    "validate-env": "node scripts/validate-env.js",
+    "validate-env:prod": "node scripts/validate-env.js .env.production",
+    "generate-secrets": "node scripts/generate-secrets.js",
+    "pre-deploy:full": "npm run validate-env:prod && npm run validate-config && npm run health-check",
+    "db:init": "node scripts/init-sqlite.js",
+    "db:backup": "node scripts/backup-sqlite.js create",
+    "db:restore": "node scripts/backup-sqlite.js restore",
+    "db:list-backups": "node scripts/backup-sqlite.js list",
+    "db:setup": "npm run db:init && sqlite3 ./data/portfolio.db < ./data/schema.sql && sqlite3 ./data/portfolio.db < ./data/seed.sql",
+    "contact:setup": "echo 'Contact system ready! Check SIMPLE_CONTACT_SETUP.md for instructions'"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -38,6 +48,7 @@
     "react-dom": "18.2.0",
     "react-quill": "^2.0.0",
     "sharp": "^0.34.5",
+    "sqlite3": "^5.1.6",
     "winston": "^3.18.3"
   },
   "devDependencies": {
