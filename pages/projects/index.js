@@ -28,11 +28,19 @@ function SimpleProjectsGrid() {
         params.append('category', selectedCategory);
       }
       
+      console.log('Fetching projects from:', `/api/projects-static?${params}`);
+      
       const response = await fetch(`/api/projects-static?${params}`);
+      
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+      
       const data = await response.json();
       
+      console.log('Response data:', data);
+      
       if (!response.ok) {
-        throw new Error(data.error?.message || 'Failed to fetch projects');
+        throw new Error(data.error?.message || `HTTP ${response.status}: Failed to fetch projects`);
       }
       
       if (data.success) {
