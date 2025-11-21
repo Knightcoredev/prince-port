@@ -13,24 +13,15 @@ const REQUIRED_VARS = [
   'NODE_ENV',
   'DATABASE_URL',
   'JWT_SECRET',
-  'SESSION_SECRET',
-  'NEXTAUTH_SECRET',
-  'NEXTAUTH_URL',
-  'NEXT_PUBLIC_APP_URL',
-  'APP_URL',
-  'EMAIL_FROM',
-  'EMAIL_TO',
-  'ADMIN_EMAIL'
+  'NEXTAUTH_SECRET'
 ];
 
-// Variables that should not contain placeholder values
+// Variables that should not contain placeholder values (optional checks)
 const PLACEHOLDER_CHECKS = {
+  // Only check these if they exist - they're optional for basic portfolio
   'NEXTAUTH_URL': ['YOUR_DOMAIN'],
   'NEXT_PUBLIC_APP_URL': ['YOUR_DOMAIN'],
   'APP_URL': ['YOUR_DOMAIN'],
-  'EMAIL_FROM': ['YOUR_DOMAIN'],
-  'EMAIL_TO': ['YOUR_DOMAIN'],
-  'ADMIN_EMAIL': ['YOUR_DOMAIN'],
   'GOOGLE_CLIENT_ID': ['YOUR_GOOGLE_CLIENT_ID'],
   'GOOGLE_CLIENT_SECRET': ['YOUR_GOOGLE_CLIENT_SECRET']
 };
@@ -80,13 +71,12 @@ function validateEnvironment(envVars) {
     }
   });
 
-  // Check for placeholder values
+  // Check for placeholder values (warnings only for optional vars)
   Object.entries(PLACEHOLDER_CHECKS).forEach(([varName, placeholders]) => {
     if (envVars[varName]) {
       placeholders.forEach(placeholder => {
         if (envVars[varName].includes(placeholder)) {
-          errors.push(`${varName} contains placeholder value: ${placeholder}`);
-          isValid = false;
+          warnings.push(`${varName} contains placeholder value: ${placeholder} (optional)`);
         }
       });
     }
@@ -107,14 +97,10 @@ function validateEnvironment(envVars) {
     }
   });
 
-  // Check email formats
-  const emailVars = ['EMAIL_FROM', 'EMAIL_TO', 'ADMIN_EMAIL'];
-  emailVars.forEach(varName => {
-    if (envVars[varName] && !envVars[varName].includes('@')) {
-      errors.push(`${varName} does not appear to be a valid email address`);
-      isValid = false;
-    }
-  });
+  // Check contact email format (optional)
+  if (envVars['CONTACT_EMAIL'] && !envVars['CONTACT_EMAIL'].includes('@')) {
+    warnings.push('CONTACT_EMAIL does not appear to be a valid email address');
+  }
 
   // Check DATABASE_URL format for SQLite
   if (envVars['DATABASE_URL'] && !envVars['DATABASE_URL'].startsWith('file:')) {
