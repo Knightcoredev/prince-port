@@ -37,7 +37,7 @@ export default function BlogList() {
         params.append('search', searchQuery);
       }
       
-      const response = await fetch(`/api/blog?${params}`);
+      const response = await fetch(`/api/blog-static?${params}`);
       const data = await response.json();
       
       if (!response.ok) {
