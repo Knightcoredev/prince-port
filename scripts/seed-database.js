@@ -7,7 +7,7 @@
 
 const fs = require('fs').promises;
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const { create, read } = require('../lib/db');
 
 // Default admin credentials (should be changed after first login)

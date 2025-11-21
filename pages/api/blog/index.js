@@ -1,21 +1,8 @@
-import { 
-  withAdminAuth, 
-  withMethods, 
-  withErrorHandling, 
-  withCSRF,
-  withSanitization,
-  withSecurityHeaders,
-  withValidation,
-  compose 
-} from '../../../lib/middleware';
-import { 
-  getPublishedPosts, 
-  createBlogPost, 
-  getBlogPosts,
-  getBlogCategories,
-  getBlogTags 
-} from '../../../lib/blog';
-import { blogPostSchema } from '../../../lib/security';
+// Temporary redirect to static blog API to avoid bcrypt issues
+export default function handler(req, res) {
+  // Redirect to static blog API
+  return res.redirect(307, '/api/blog-static' + (req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : ''));
+}
 
 // GET /api/blog - Fetch published blog posts (public)
 // POST /api/blog - Create new blog post (admin only)

@@ -1,16 +1,8 @@
-const { create, read, update, deleteRecord } = require('../../../lib/db');
-const { 
-  withAdminAuth,
-  withMethods,
-  withCSRF,
-  withSanitization,
-  withSecurityHeaders,
-  withValidation,
-  withErrorHandling,
-  compose
-} = require('../../../lib/middleware');
-const { generateId } = require('../../../lib/utils');
-const { projectSchema } = require('../../../lib/security');
+// Temporary redirect to static projects API to avoid bcrypt issues
+export default function handler(req, res) {
+  // Redirect to static projects API
+  return res.redirect(307, '/api/projects-static' + (req.url.includes('?') ? req.url.substring(req.url.indexOf('?')) : ''));
+}
 
 /**
  * Filter and search projects

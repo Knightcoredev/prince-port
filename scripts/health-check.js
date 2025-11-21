@@ -120,7 +120,7 @@ class HealthChecker {
       }
       
       // Check critical dependencies
-      const criticalDeps = ['next', 'react', 'bcrypt', 'jsonwebtoken'];
+      const criticalDeps = ['next', 'react', 'bcryptjs', 'jsonwebtoken'];
       for (const dep of criticalDeps) {
         const depPath = path.join('node_modules', dep);
         if (!fs.existsSync(depPath)) {

@@ -210,7 +210,7 @@ class ConfigValidator {
       const criticalDeps = [
         'next',
         'react',
-        'bcrypt',
+        'bcryptjs',
         'jsonwebtoken',
         'nodemailer',
         'joi',
