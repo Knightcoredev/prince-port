@@ -1,310 +1,158 @@
-import React, { useState, useEffect } from 'react';
-import { Card, CardContent, Typography, Grid, Box, Chip } from '@mui/material';
-import { TrendingUp, TrendingDown, AccountBalance, ShowChart } from '@mui/icons-material';
-import { Line } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
+import React, { useState } from 'react';
+import CoinCard from './CoinCard';
+import AddCoinModal from './AddCoinModal';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
-
-interface Holding {
+interface Coin {
   id: string;
   symbol: string;
   name: string;
   amount: number;
-  currentPrice: number;
-  purchasePrice: number;
-  value: number;
+  price: number;
   change24h: number;
-  changePercent24h: number;
 }
 
-interface PortfolioStats {
-  totalValue: number;
-  totalChange: number;
-  totalChangePercent: number;
-  topGainer: Holding;
-  topLoser: Holding;
+interface PortfolioProps {
+  coins: Coin[];
+  onAddCoin: () => void;
 }
 
-const Portfolio: React.FC = () => {
-  const [holdings, setHoldings] = useState<Holding[]>([]);
-  const [stats, setStats] = useState<PortfolioStats | null>(null);
-  const [chartData, setChartData] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
+export default function Portfolio({ coins, onAddCoin }: PortfolioProps) {
+  const [sortBy, setSortBy] = useState<'value' | 'change' | 'name'>('value');
 
-  useEffect(() => {
-    fetchPortfolioData();
-    const interval = setInterval(fetchPortfolioData, 30000); // Update every 30 seconds
-    return () => clearInterval(interval);
-  }, []);
+  const totalValue = coins.reduce((sum, coin) => sum + (coin.amount * coin.price), 0);
+  const totalChange = coins.reduce((sum, coin) => {
+    const coinValue = coin.amount * coin.price;
+    const dailyChangeValue = coinValue * (coin.change24h / 100);
+    return sum + dailyChangeValue;
+  }, 0);
+  const totalChangePercent = totalValue > 0 ? (totalChange / totalValue) * 100 : 0;
 
-  const fetchPortfolioData = async () => {
-    try {
-      const [holdingsRes, chartRes] = await Promise.all([
-        fetch('/api/portfolio/holdings'),
-        fetch('/api/portfolio/chart?period=7d')
-      ]);
-
-      const holdingsData = await holdingsRes.json();
-      const chartDataRes = await chartRes.json();
-
-      setHoldings(holdingsData.holdings || []);
-      setStats(holdingsData.stats || null);
-      setChartData(chartDataRes.chartData || null);
-    } catch (error) {
-      console.error('Error fetching portfolio data:', error);
-    } finally {
-      setLoading(false);
+  const sortedCoins = [...coins].sort((a, b) => {
+    switch (sortBy) {
+      case 'value':
+        return (b.amount * b.price) - (a.amount * a.price);
+      case 'change':
+        return b.change24h - a.change24h;
+      case 'name':
+        return a.name.localeCompare(b.name);
+      default:
+        return 0;
     }
-  };
-
-  const formatCurrency = (amount: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    }).format(amount);
-  };
-
-  const formatPercent = (percent: number) => {
-    return `${percent >= 0 ? '+' : ''}${percent.toFixed(2)}%`;
-  };
-
-  if (loading) {
-    return (
-      <Box display="flex" justifyContent="center" alignItems="center" height="400px">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </Box>
-    );
-  }
+  });
 
   return (
-    <Box p={3}>
-      {/* Portfolio Overview */}
-      <Grid container spacing={3} mb={4}>
-        <Grid item xs={12} md={3}>
-          <Card>
-            <CardContent>
-              <Box display="flex" alignItems="center" mb={1}>
-                <AccountBalance color="primary" />
-                <Typography variant="h6" ml={1}>
-                  Total Value
-                </Typography>
-              </Box>
-              <Typography variant="h4" fontWeight="bold">
-                {formatCurrency(stats?.totalValue || 0)}
-              </Typography>
-              <Box display="flex" alignItems="center" mt={1}>
-                {(stats?.totalChangePercent || 0) >= 0 ? (
-                  <TrendingUp color="success" />
-                ) : (
-                  <TrendingDown color="error" />
-                )}
-                <Typography
-                  variant="body2"
-                  color={(stats?.totalChangePercent || 0) >= 0 ? 'success.main' : 'error.main'}
-                  ml={0.5}
-                >
-                  {formatPercent(stats?.totalChangePercent || 0)}
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      {/* Portfolio Summary */}
+      <div className="bg-white rounded-lg shadow-sm border p-6 mb-8">
+        <div className="flex justify-between items-start mb-6">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">Portfolio Overview</h2>
+            <p className="text-gray-600">Track your cryptocurrency investments</p>
+          </div>
+          <button
+            onClick={onAddCoin}
+            className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Add Coin
+          </button>
+        </div>
 
-        <Grid item xs={12} md={3}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                24h Change
-              </Typography>
-              <Typography
-                variant="h4"
-                fontWeight="bold"
-                color={(stats?.totalChange || 0) >= 0 ? 'success.main' : 'error.main'}
-              >
-                {formatCurrency(stats?.totalChange || 0)}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="text-center">
+            <p className="text-sm text-gray-600">Total Portfolio Value</p>
+            <p className="text-3xl font-bold text-gray-900">
+              ${totalValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-600">24h Change</p>
+            <p className={`text-3xl font-bold ${totalChange >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              {totalChange >= 0 ? '+' : ''}${Math.abs(totalChange).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-sm text-gray-600">24h Change %</p>
+            <p className={`text-3xl font-bold ${totalChangePercent >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+              {totalChangePercent >= 0 ? '+' : ''}{totalChangePercent.toFixed(2)}%
+            </p>
+          </div>
+        </div>
+      </div>
 
-        <Grid item xs={12} md={3}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Top Gainer
-              </Typography>
-              {stats?.topGainer && (
-                <>
-                  <Typography variant="h6" fontWeight="bold">
-                    {stats.topGainer.symbol}
-                  </Typography>
-                  <Typography variant="body2" color="success.main">
-                    {formatPercent(stats.topGainer.changePercent24h)}
-                  </Typography>
-                </>
-              )}
-            </CardContent>
-          </Card>
-        </Grid>
+      {/* Portfolio Controls */}
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-xl font-semibold text-gray-900">Your Holdings</h3>
+        <div className="flex items-center space-x-4">
+          <label className="text-sm text-gray-600">Sort by:</label>
+          <select
+            value={sortBy}
+            onChange={(e) => setSortBy(e.target.value as 'value' | 'change' | 'name')}
+            className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          >
+            <option value="value">Portfolio Value</option>
+            <option value="change">24h Change</option>
+            <option value="name">Name (A-Z)</option>
+          </select>
+        </div>
+      </div>
 
-        <Grid item xs={12} md={3}>
-          <Card>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Top Loser
-              </Typography>
-              {stats?.topLoser && (
-                <>
-                  <Typography variant="h6" fontWeight="bold">
-                    {stats.topLoser.symbol}
-                  </Typography>
-                  <Typography variant="body2" color="error.main">
-                    {formatPercent(stats.topLoser.changePercent24h)}
-                  </Typography>
-                </>
-              )}
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
-
-      {/* Portfolio Chart */}
-      {chartData && (
-        <Card sx={{ mb: 4 }}>
-          <CardContent>
-            <Typography variant="h6" gutterBottom>
-              Portfolio Performance (7 Days)
-            </Typography>
-            <Line
-              data={chartData}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: {
-                    display: false,
-                  },
-                },
-                scales: {
-                  y: {
-                    beginAtZero: false,
-                    ticks: {
-                      callback: function(value) {
-                        return formatCurrency(value as number);
-                      },
-                    },
-                  },
-                },
-              }}
-            />
-          </CardContent>
-        </Card>
+      {/* Coins Grid */}
+      {coins.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sortedCoins.map((coin) => (
+            <CoinCard key={coin.id} coin={coin} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-12">
+          <div className="text-6xl mb-4">💰</div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">No Coins in Portfolio</h3>
+          <p className="text-gray-600 mb-6">
+            Start building your cryptocurrency portfolio by adding your first coin.
+          </p>
+          <button
+            onClick={onAddCoin}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            Add Your First Coin
+          </button>
+        </div>
       )}
 
-      {/* Holdings List */}
-      <Card>
-        <CardContent>
-          <Typography variant="h6" gutterBottom>
-            Your Holdings
-          </Typography>
-          <Grid container spacing={2}>
-            {holdings.map((holding) => (
-              <Grid item xs={12} key={holding.id}>
-                <Card variant="outlined">
-                  <CardContent>
-                    <Grid container alignItems="center" spacing={2}>
-                      <Grid item xs={12} sm={3}>
-                        <Box>
-                          <Typography variant="h6" fontWeight="bold">
-                            {holding.symbol}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
-                            {holding.name}
-                          </Typography>
-                        </Box>
-                      </Grid>
-
-                      <Grid item xs={6} sm={2}>
-                        <Typography variant="body2" color="text.secondary">
-                          Amount
-                        </Typography>
-                        <Typography variant="body1" fontWeight="medium">
-                          {holding.amount.toFixed(8)}
-                        </Typography>
-                      </Grid>
-
-                      <Grid item xs={6} sm={2}>
-                        <Typography variant="body2" color="text.secondary">
-                          Price
-                        </Typography>
-                        <Typography variant="body1" fontWeight="medium">
-                          {formatCurrency(holding.currentPrice)}
-                        </Typography>
-                      </Grid>
-
-                      <Grid item xs={6} sm={2}>
-                        <Typography variant="body2" color="text.secondary">
-                          Value
-                        </Typography>
-                        <Typography variant="body1" fontWeight="bold">
-                          {formatCurrency(holding.value)}
-                        </Typography>
-                      </Grid>
-
-                      <Grid item xs={6} sm={2}>
-                        <Typography variant="body2" color="text.secondary">
-                          24h Change
-                        </Typography>
-                        <Box display="flex" alignItems="center">
-                          {holding.changePercent24h >= 0 ? (
-                            <TrendingUp color="success" fontSize="small" />
-                          ) : (
-                            <TrendingDown color="error" fontSize="small" />
-                          )}
-                          <Typography
-                            variant="body2"
-                            color={holding.changePercent24h >= 0 ? 'success.main' : 'error.main'}
-                            ml={0.5}
-                          >
-                            {formatPercent(holding.changePercent24h)}
-                          </Typography>
-                        </Box>
-                      </Grid>
-
-                      <Grid item xs={12} sm={1}>
-                        <Chip
-                          label={holding.value > holding.amount * holding.purchasePrice ? 'Profit' : 'Loss'}
-                          color={holding.value > holding.amount * holding.purchasePrice ? 'success' : 'error'}
-                          size="small"
-                        />
-                      </Grid>
-                    </Grid>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </CardContent>
-      </Card>
-    </Box>
+      {/* Portfolio Allocation */}
+      {coins.length > 0 && (
+        <div className="mt-8 bg-white rounded-lg shadow-sm border p-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Portfolio Allocation</h3>
+          <div className="space-y-3">
+            {sortedCoins.map((coin) => {
+              const coinValue = coin.amount * coin.price;
+              const percentage = totalValue > 0 ? (coinValue / totalValue) * 100 : 0;
+              
+              return (
+                <div key={coin.id} className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">
+                        {coin.symbol.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-medium text-gray-900">{coin.name}</p>
+                      <p className="text-sm text-gray-600">{coin.amount} {coin.symbol}</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-medium text-gray-900">
+                      ${coinValue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                    </p>
+                    <p className="text-sm text-gray-600">{percentage.toFixed(1)}%</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
   );
-};
-
-export default Portfolio;
+}

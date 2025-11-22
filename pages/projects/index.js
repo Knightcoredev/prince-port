@@ -31,7 +31,7 @@ function SimpleProjectsGrid() {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/ecommerce-platform',
       liveUrl: 'https://ecommerce-demo.vercel.app',
-      imageUrl: '/images/projects/ecommerce-platform.jpg'
+      imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center'
     },
     {
       id: '2',
@@ -44,7 +44,7 @@ function SimpleProjectsGrid() {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/task-management',
       liveUrl: 'https://taskflow-pro.vercel.app',
-      imageUrl: '/images/projects/task-management.jpg'
+      imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center'
     },
     {
       id: '3',
@@ -57,7 +57,7 @@ function SimpleProjectsGrid() {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/social-analytics',
       liveUrl: 'https://social-insights-pro.vercel.app',
-      imageUrl: '/images/projects/social-analytics.jpg'
+      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center'
     },
     {
       id: '4',
@@ -70,7 +70,7 @@ function SimpleProjectsGrid() {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/real-estate-platform',
       liveUrl: 'https://realestate-pro.vercel.app',
-      imageUrl: '/images/projects/real-estate.jpg'
+      imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center'
     },
     {
       id: '5',
@@ -83,7 +83,7 @@ function SimpleProjectsGrid() {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/lms-platform',
       liveUrl: 'https://edulearn-pro.vercel.app',
-      imageUrl: '/images/projects/lms-platform.jpg'
+      imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center'
     },
     {
       id: '6',
@@ -96,7 +96,7 @@ function SimpleProjectsGrid() {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/crypto-tracker',
       liveUrl: 'https://cryptofolio-pro.vercel.app',
-      imageUrl: '/images/projects/crypto-tracker.jpg'
+      imageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center'
     }
   ];
 
@@ -208,8 +208,19 @@ function SimpleProjectsGrid() {
           projects.map((project) => (
             <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               {/* Project Image */}
-              <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                <div className="text-white text-center">
+              <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
+                {project.imageUrl || project.images?.[0] ? (
+                  <img
+                    src={project.imageUrl || project.images[0]}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                ) : null}
+                <div className="text-white text-center absolute inset-0 flex flex-col items-center justify-center" style={{ display: project.imageUrl || project.images?.[0] ? 'none' : 'flex' }}>
                   <div className="text-4xl mb-2">💻</div>
                   <div className="text-sm font-medium">{project.category}</div>
                 </div>
@@ -313,7 +324,7 @@ export default function ProjectsIndex() {
   return (
     <>
       <Head>
-        <title>Projects - Prince F. Obieze | Full Stack Developer Portfolio</title>
+        <title>Portfolio Projects - Prince F. Obieze | Full Stack Developer</title>
         <meta 
           name="description" 
           content="Explore my professional development projects including e-commerce platforms, task management systems, social media analytics, and more. Full-stack solutions built with modern technologies." 

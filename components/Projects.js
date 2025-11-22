@@ -86,12 +86,15 @@ export default function Projects() {
   const ProjectCard = ({ project }) => (
     <div className="group p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow cursor-pointer">
       {/* Project Image */}
-      {project.images && project.images.length > 0 && (
+      {(project.imageUrl || (project.images && project.images.length > 0)) && (
         <div className="mb-4 overflow-hidden rounded-md">
           <img
-            src={project.images[0]}
+            src={project.imageUrl || project.images[0]}
             alt={project.title}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              e.target.src = 'https://via.placeholder.com/400x300?text=' + encodeURIComponent(project.title);
+            }}
           />
         </div>
       )}
@@ -273,7 +276,7 @@ export default function Projects() {
   return (
     <section id="projects" className="max-w-6xl mx-auto px-6 py-12">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Selected Projects</h2>
+        <h2 className="text-3xl font-bold text-gray-900">Featured Projects</h2>
         <p className="mt-2 text-gray-600">
           Explore my recent work and technical projects
         </p>

@@ -1,142 +1,40 @@
-import { useState, useEffect } from 'react';
-import { Line, Bar, Doughnut } from 'react-chartjs-2';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  BarElement,
-  ArcElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import React, { useState } from 'react';
+import EngagementChart from './EngagementChart';
+import MetricsCard from './MetricsCard';
 
 export default function AnalyticsDashboard() {
-  const [analytics, setAnalytics] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [timeRange, setTimeRange] = useState('7d');
   const [selectedPlatforms, setSelectedPlatforms] = useState(['twitter', 'instagram', 'facebook']);
 
-  useEffect(() => {
-    fetchAnalytics();
-  }, [timeRange, selectedPlatforms]);
-
-  const fetchAnalytics = async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(`/api/analytics?timeRange=${timeRange}&platforms=${selectedPlatforms.join(',')}`);
-      const data = await response.json();
-      setAnalytics(data);
-    } catch (error) {
-      console.error('Error fetching analytics:', error);
-    } finally {
-      setLoading(false);
-    }
+  const mockAnalytics = {
+    totalFollowers: 125400,
+    engagementRate: 8.7,
+    totalPosts: 156,
+    totalReach: 2400000,
+    topPosts: [
+      {
+        content: "Just launched our new product! 🚀 What do you think?",
+        platform: "Twitter",
+        date: "2 hours ago",
+        engagement: 1250,
+        reach: 15600
+      },
+      {
+        content: "Behind the scenes of our latest campaign",
+        platform: "Instagram",
+        date: "1 day ago",
+        engagement: 2100,
+        reach: 28400
+      },
+      {
+        content: "Tips for better social media engagement",
+        platform: "Facebook",
+        date: "2 days ago",
+        engagement: 890,
+        reach: 12300
+      }
+    ]
   };
-
-  const engagementData = {
-    labels: analytics?.engagement?.labels || [],
-    datasets: [
-      {
-        label: 'Likes',
-        data: analytics?.engagement?.likes || [],
-        borderColor: 'rgb(59, 130, 246)',
-        backgroundColor: 'rgba(59, 130, 246, 0.1)',
-        tension: 0.4,
-      },
-      {
-        label: 'Comments',
-        data: analytics?.engagement?.comments || [],
-        borderColor: 'rgb(16, 185, 129)',
-        backgroundColor: 'rgba(16, 185, 129, 0.1)',
-        tension: 0.4,
-      },
-      {
-        label: 'Shares',
-        data: analytics?.engagement?.shares || [],
-        borderColor: 'rgb(245, 158, 11)',
-        backgroundColor: 'rgba(245, 158, 11, 0.1)',
-        tension: 0.4,
-      },
-    ],
-  };
-
-  const platformData = {
-    labels: ['Twitter', 'Instagram', 'Facebook'],
-    datasets: [
-      {
-        data: analytics?.platformDistribution || [0, 0, 0],
-        backgroundColor: [
-          'rgba(29, 161, 242, 0.8)',
-          'rgba(225, 48, 108, 0.8)',
-          'rgba(24, 119, 242, 0.8)',
-        ],
-        borderColor: [
-          'rgba(29, 161, 242, 1)',
-          'rgba(225, 48, 108, 1)',
-          'rgba(24, 119, 242, 1)',
-        ],
-        borderWidth: 2,
-      },
-    ],
-  };
-
-  const sentimentData = {
-    labels: analytics?.sentiment?.labels || [],
-    datasets: [
-      {
-        label: 'Positive',
-        data: analytics?.sentiment?.positive || [],
-        backgroundColor: 'rgba(16, 185, 129, 0.8)',
-      },
-      {
-        label: 'Neutral',
-        data: analytics?.sentiment?.neutral || [],
-        backgroundColor: 'rgba(107, 114, 128, 0.8)',
-      },
-      {
-        label: 'Negative',
-        data: analytics?.sentiment?.negative || [],
-        backgroundColor: 'rgba(239, 68, 68, 0.8)',
-      },
-    ],
-  };
-
-  const chartOptions = {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: 'top',
-      },
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  };
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-64">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-      </div>
-    );
-  }
 
   return (
     <div className="p-6 space-y-6">
@@ -184,70 +82,89 @@ export default function AnalyticsDashboard() {
 
       {/* Key Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-sm font-medium text-gray-500">Total Followers</h3>
-          <p className="text-3xl font-bold text-gray-900">{analytics?.totalFollowers?.toLocaleString() || '0'}</p>
-          <p className="text-sm text-green-600">+12% from last period</p>
-        </div>
+        <MetricsCard
+          title="Total Followers"
+          value={mockAnalytics.totalFollowers.toLocaleString()}
+          change="+12%"
+          changeType="positive"
+          icon="👥"
+        />
         
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-sm font-medium text-gray-500">Engagement Rate</h3>
-          <p className="text-3xl font-bold text-gray-900">{analytics?.engagementRate || '0'}%</p>
-          <p className="text-sm text-green-600">+5.2% from last period</p>
-        </div>
+        <MetricsCard
+          title="Engagement Rate"
+          value={`${mockAnalytics.engagementRate}%`}
+          change="+5.2%"
+          changeType="positive"
+          icon="💬"
+        />
         
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-sm font-medium text-gray-500">Total Posts</h3>
-          <p className="text-3xl font-bold text-gray-900">{analytics?.totalPosts || '0'}</p>
-          <p className="text-sm text-blue-600">+8 new posts</p>
-        </div>
+        <MetricsCard
+          title="Total Posts"
+          value={mockAnalytics.totalPosts.toString()}
+          change="+8 new"
+          changeType="neutral"
+          icon="📝"
+        />
         
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-sm font-medium text-gray-500">Reach</h3>
-          <p className="text-3xl font-bold text-gray-900">{analytics?.totalReach?.toLocaleString() || '0'}</p>
-          <p className="text-sm text-green-600">+18% from last period</p>
-        </div>
+        <MetricsCard
+          title="Reach"
+          value={mockAnalytics.totalReach.toLocaleString()}
+          change="+18%"
+          changeType="positive"
+          icon="📊"
+        />
       </div>
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Engagement Trends */}
-        <div className="bg-white p-6 rounded-lg shadow-md">
-          <h3 className="text-lg font-semibold mb-4">Engagement Trends</h3>
-          <Line data={engagementData} options={chartOptions} />
-        </div>
+        <EngagementChart />
 
         {/* Platform Distribution */}
-        <div className="bg-white p-6 rounded-lg shadow-md">
+        <div className="bg-white p-6 rounded-lg shadow-sm border">
           <h3 className="text-lg font-semibold mb-4">Platform Distribution</h3>
-          <Doughnut data={platformData} />
-        </div>
-
-        {/* Sentiment Analysis */}
-        <div className="bg-white p-6 rounded-lg shadow-md lg:col-span-2">
-          <h3 className="text-lg font-semibold mb-4">Sentiment Analysis</h3>
-          <Bar data={sentimentData} options={chartOptions} />
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-4 h-4 bg-blue-500 rounded"></div>
+                <span>Twitter</span>
+              </div>
+              <span className="font-medium">35%</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-4 h-4 bg-pink-500 rounded"></div>
+                <span>Instagram</span>
+              </div>
+              <span className="font-medium">40%</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-4 h-4 bg-blue-600 rounded"></div>
+                <span>Facebook</span>
+              </div>
+              <span className="font-medium">25%</span>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Top Posts */}
-      <div className="bg-white p-6 rounded-lg shadow-md">
+      <div className="bg-white p-6 rounded-lg shadow-sm border">
         <h3 className="text-lg font-semibold mb-4">Top Performing Posts</h3>
         <div className="space-y-4">
-          {analytics?.topPosts?.map((post, index) => (
+          {mockAnalytics.topPosts.map((post, index) => (
             <div key={index} className="flex items-center justify-between p-4 border border-gray-200 rounded-lg">
               <div className="flex-1">
                 <p className="font-medium">{post.content}</p>
                 <p className="text-sm text-gray-500">{post.platform} • {post.date}</p>
               </div>
               <div className="text-right">
-                <p className="font-semibold">{post.engagement} engagements</p>
-                <p className="text-sm text-gray-500">{post.reach} reach</p>
+                <p className="font-semibold">{post.engagement.toLocaleString()} engagements</p>
+                <p className="text-sm text-gray-500">{post.reach.toLocaleString()} reach</p>
               </div>
             </div>
-          )) || (
-            <p className="text-gray-500 text-center py-8">No posts data available</p>
-          )}
+          ))}
         </div>
       </div>
     </div>

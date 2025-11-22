@@ -36,11 +36,11 @@ export default function handler(req, res) {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/ecommerce-platform',
       liveUrl: 'https://ecommerce-demo.vercel.app',
-      imageUrl: '/images/projects/ecommerce-platform.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
       images: [
-        '/images/projects/ecommerce-1.jpg',
-        '/images/projects/ecommerce-2.jpg',
-        '/images/projects/ecommerce-3.jpg'
+        'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center'
       ],
       features: [
         'User Authentication & Authorization',
@@ -95,11 +95,11 @@ export default function handler(req, res) {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/task-management',
       liveUrl: 'https://taskflow-pro.vercel.app',
-      imageUrl: '/images/projects/task-management.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center',
       images: [
-        '/images/projects/task-1.jpg',
-        '/images/projects/task-2.jpg',
-        '/images/projects/task-3.jpg'
+        'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center'
       ],
       features: [
         'Real-time Collaboration',
@@ -154,11 +154,11 @@ export default function handler(req, res) {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/social-analytics',
       liveUrl: 'https://social-insights-pro.vercel.app',
-      imageUrl: '/images/projects/social-analytics.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
       images: [
-        '/images/projects/social-1.jpg',
-        '/images/projects/social-2.jpg',
-        '/images/projects/social-3.jpg'
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&crop=center'
       ],
       features: [
         'Multi-Platform Integration',
@@ -213,11 +213,11 @@ export default function handler(req, res) {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/real-estate-platform',
       liveUrl: 'https://realestate-pro.vercel.app',
-      imageUrl: '/images/projects/real-estate.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center',
       images: [
-        '/images/projects/realestate-1.jpg',
-        '/images/projects/realestate-2.jpg',
-        '/images/projects/realestate-3.jpg'
+        'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1448630360428-65456885c650?w=800&h=600&fit=crop&crop=center'
       ],
       features: [
         'Property Listings Management',
@@ -272,11 +272,11 @@ export default function handler(req, res) {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/lms-platform',
       liveUrl: 'https://edulearn-pro.vercel.app',
-      imageUrl: '/images/projects/lms-platform.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center',
       images: [
-        '/images/projects/lms-1.jpg',
-        '/images/projects/lms-2.jpg',
-        '/images/projects/lms-3.jpg'
+        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&h=600&fit=crop&crop=center'
       ],
       features: [
         'Course Creation Tools',
@@ -331,11 +331,11 @@ export default function handler(req, res) {
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/crypto-tracker',
       liveUrl: 'https://cryptofolio-pro.vercel.app',
-      imageUrl: '/images/projects/crypto-tracker.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center',
       images: [
-        '/images/projects/crypto-1.jpg',
-        '/images/projects/crypto-2.jpg',
-        '/images/projects/crypto-3.jpg'
+        'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=800&h=600&fit=crop&crop=center'
       ],
       features: [
         'Real-time Price Tracking',
