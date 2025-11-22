@@ -18,34 +18,133 @@ function SimpleProjectsGrid() {
     fetchProjects();
   }, [selectedCategory]);
 
+  // Static projects data (fallback if API fails)
+  const staticProjects = [
+    {
+      id: '1',
+      title: 'E-Commerce Platform',
+      slug: 'ecommerce-platform',
+      description: 'A full-featured e-commerce platform with user authentication, payment processing, inventory management, and admin dashboard. Built with modern technologies for scalability and performance.',
+      technologies: ['Next.js', 'React', 'Node.js', 'Express', 'MongoDB', 'Stripe API', 'JWT Authentication', 'Tailwind CSS', 'Vercel', 'Cloudinary'],
+      category: 'Full Stack',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/ecommerce-platform',
+      liveUrl: 'https://ecommerce-demo.vercel.app',
+      imageUrl: '/images/projects/ecommerce-platform.jpg'
+    },
+    {
+      id: '2',
+      title: 'Task Management Dashboard',
+      slug: 'task-management-dashboard',
+      description: 'A collaborative project management tool with real-time updates, team collaboration features, and advanced analytics. Perfect for agile development teams and project tracking.',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'PostgreSQL', 'Prisma', 'Chart.js', 'Material-UI', 'JWT', 'AWS S3', 'Docker'],
+      category: 'Full Stack',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/task-management',
+      liveUrl: 'https://taskflow-pro.vercel.app',
+      imageUrl: '/images/projects/task-management.jpg'
+    },
+    {
+      id: '3',
+      title: 'Social Media Analytics Platform',
+      slug: 'social-media-analytics',
+      description: 'A comprehensive analytics platform that aggregates data from multiple social media APIs, providing insights, trends analysis, and automated reporting for businesses and influencers.',
+      technologies: ['Next.js', 'Python', 'FastAPI', 'Redis', 'PostgreSQL', 'D3.js', 'Chart.js', 'TensorFlow', 'Docker', 'AWS Lambda', 'Celery', 'React Query'],
+      category: 'Full Stack',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/social-analytics',
+      liveUrl: 'https://social-insights-pro.vercel.app',
+      imageUrl: '/images/projects/social-analytics.jpg'
+    },
+    {
+      id: '4',
+      title: 'Real Estate Management System',
+      slug: 'real-estate-management',
+      description: 'A comprehensive property management platform for real estate agencies, featuring property listings, client management, virtual tours, and automated marketing tools.',
+      technologies: ['React Native', 'Next.js', 'Node.js', 'MongoDB', 'Mapbox API', 'Cloudinary', 'SendGrid', 'Stripe', 'DocuSign API', 'Firebase', 'Expo'],
+      category: 'Full Stack',
+      featured: false,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/real-estate-platform',
+      liveUrl: 'https://realestate-pro.vercel.app',
+      imageUrl: '/images/projects/real-estate.jpg'
+    },
+    {
+      id: '5',
+      title: 'Learning Management System (LMS)',
+      slug: 'learning-management-system',
+      description: 'An educational platform with course creation tools, student progress tracking, interactive assessments, and video streaming capabilities for online learning.',
+      technologies: ['Next.js', 'React', 'Node.js', 'Express', 'PostgreSQL', 'AWS S3', 'CloudFront', 'Stripe', 'Socket.io', 'FFmpeg', 'PDF-lib', 'Chart.js'],
+      category: 'Full Stack',
+      featured: false,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/lms-platform',
+      liveUrl: 'https://edulearn-pro.vercel.app',
+      imageUrl: '/images/projects/lms-platform.jpg'
+    },
+    {
+      id: '6',
+      title: 'Cryptocurrency Portfolio Tracker',
+      slug: 'crypto-portfolio-tracker',
+      description: 'A real-time cryptocurrency portfolio management application with price tracking, profit/loss analysis, news integration, and advanced charting capabilities.',
+      technologies: ['React', 'TypeScript', 'Node.js', 'WebSocket', 'Redis', 'PostgreSQL', 'TradingView Charts', 'CoinGecko API', 'Web3.js', 'PWA'],
+      category: 'Frontend',
+      featured: false,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/crypto-tracker',
+      liveUrl: 'https://cryptofolio-pro.vercel.app',
+      imageUrl: '/images/projects/crypto-tracker.jpg'
+    }
+  ];
+
   const fetchProjects = async () => {
     try {
       setLoading(true);
       setError(null);
       
-      const params = new URLSearchParams();
+      // Try API first, fallback to static data
+      try {
+        const params = new URLSearchParams();
+        if (selectedCategory !== 'all') {
+          params.append('category', selectedCategory);
+        }
+        
+        console.log('Fetching projects from:', `/api/projects-static?${params}`);
+        
+        const response = await fetch(`/api/projects-static?${params}`);
+        
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+        
+        if (response.ok) {
+          const data = await response.json();
+          console.log('Response data:', data);
+          
+          if (data.success) {
+            setProjects(data.data.projects);
+            return; // Success, exit early
+          }
+        }
+      } catch (apiError) {
+        console.log('API failed, using static data:', apiError.message);
+      }
+      
+      // Fallback to static data
+      console.log('Using static projects data');
+      let filteredProjects = [...staticProjects];
+      
+      // Apply category filter
       if (selectedCategory !== 'all') {
-        params.append('category', selectedCategory);
+        filteredProjects = filteredProjects.filter(
+          project => project.category.toLowerCase() === selectedCategory.toLowerCase()
+        );
       }
       
-      console.log('Fetching projects from:', `/api/projects-static?${params}`);
+      setProjects(filteredProjects);
       
-      const response = await fetch(`/api/projects-static?${params}`);
-      
-      console.log('Response status:', response.status);
-      console.log('Response ok:', response.ok);
-      
-      const data = await response.json();
-      
-      console.log('Response data:', data);
-      
-      if (!response.ok) {
-        throw new Error(data.error?.message || `HTTP ${response.status}: Failed to fetch projects`);
-      }
-      
-      if (data.success) {
-        setProjects(data.data.projects);
-      }
     } catch (err) {
       setError(err.message);
       console.error('Error fetching projects:', err);
