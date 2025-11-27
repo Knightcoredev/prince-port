@@ -393,14 +393,16 @@ export default function handler(req, res) {
     const endIndex = startIndex + parseInt(limit);
     const paginatedProjects = filteredProjects.slice(startIndex, endIndex);
 
-    // Get unique categories for filtering
+    // Get unique categories and technologies for filtering
     const categories = [...new Set(projects.map(p => p.category))];
+    const technologies = [...new Set(projects.flatMap(p => p.technologies))];
 
     return res.status(200).json({
       success: true,
       data: {
         projects: paginatedProjects,
         categories,
+        technologies,
         pagination: {
           limit: parseInt(limit),
           offset: parseInt(offset),

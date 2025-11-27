@@ -39,14 +39,14 @@ export default function Projects() {
       const result = await response.json();
 
       if (result.success) {
-        setProjects(result.data);
-        setAvailableCategories(result.meta.categories || []);
-        setAvailableTechnologies(result.meta.technologies || []);
+        setProjects(result.data.projects || result.data);
+        setAvailableCategories(result.data.categories || []);
+        setAvailableTechnologies(result.data.technologies || []);
         setProjectStats({
-          total: result.meta.total || 0,
-          featured: result.data.filter(p => p.featured).length,
-          categories: result.meta.categories?.length || 0,
-          technologies: result.meta.technologies?.length || 0
+          total: result.data.stats?.totalProjects || result.data.projects?.length || 0,
+          featured: result.data.stats?.featuredProjects || result.data.projects?.filter(p => p.featured).length || 0,
+          categories: result.data.categories?.length || 0,
+          technologies: result.data.technologies?.length || 0
         });
         setError(null);
       } else {
