@@ -17,6 +17,7 @@ interface Coin {
 
 function App() {
   const [activeTab, setActiveTab] = useState('portfolio');
+  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [coins, setCoins] = useState<Coin[]>([
     {
       id: 'bitcoin',
