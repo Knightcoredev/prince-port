@@ -35,7 +35,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/ecommerce-platform',
-      liveUrl: 'https://ecommerce-demo.vercel.app',
+      liveUrl: 'http://localhost:3000/projects/ecommerce-platform',
       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
@@ -94,7 +94,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/task-management',
-      liveUrl: 'https://taskflow-pro.vercel.app',
+      liveUrl: 'http://localhost:5175',
       imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center',
@@ -153,7 +153,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/social-analytics',
-      liveUrl: 'https://social-insights-pro.vercel.app',
+      liveUrl: 'http://localhost:5176',
       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
@@ -212,7 +212,7 @@ export default function handler(req, res) {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/real-estate-platform',
-      liveUrl: 'https://realestate-pro.vercel.app',
+      liveUrl: 'http://localhost:5173',
       imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center',
@@ -271,7 +271,7 @@ export default function handler(req, res) {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/lms-platform',
-      liveUrl: 'https://edulearn-pro.vercel.app',
+      liveUrl: 'http://localhost:5177',
       imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center',
@@ -330,7 +330,7 @@ export default function handler(req, res) {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/crypto-tracker',
-      liveUrl: 'https://cryptofolio-pro.vercel.app',
+      liveUrl: 'http://localhost:5174',
       imageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center',
