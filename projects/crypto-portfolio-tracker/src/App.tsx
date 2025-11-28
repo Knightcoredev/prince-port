@@ -44,7 +44,6 @@ function App() {
       change24h: 5.8
     }
   ]);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
 
   const totalValue = coins.reduce((sum, coin) => sum + (coin.amount * coin.price), 0);
   const dailyChange = coins.reduce((sum, coin) => {
