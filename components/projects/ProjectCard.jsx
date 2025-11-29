@@ -18,17 +18,27 @@ export default function ProjectCard({ project }) {
       {/* Project Image */}
       <div className="project-image">
         {!imageError ? (
-          <img
-            src={project.imageUrl}
-            alt={project.title}
-            onError={handleImageError}
-            className="image"
-          />
+          <div className="image-container">
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              onError={handleImageError}
+              className="image"
+            />
+            {/* Brand Watermark */}
+            <div className="brand-watermark">
+              <div className="brand-icon">PO</div>
+            </div>
+          </div>
         ) : (
           <div className="image-placeholder">
             <div className="placeholder-content">
               <div className="placeholder-icon">🚀</div>
               <div className="placeholder-text">{project.title}</div>
+              {/* Brand Watermark for placeholder */}
+              <div className="brand-watermark">
+                <div className="brand-icon">PO</div>
+              </div>
             </div>
           </div>
         )}
@@ -69,16 +79,54 @@ export default function ProjectCard({ project }) {
 
         {/* Technologies */}
         <div className="project-technologies">
-          {project.technologies.slice(0, 4).map((tech, index) => (
-            <span key={index} className="tech-tag">
-              {tech}
-            </span>
-          ))}
+          {project.technologies.slice(0, 4).map((tech, index) => {
+            const getTechIcon = (techName) => {
+              const name = techName.toLowerCase();
+              if (name.includes('react')) return '⚛️';
+              if (name.includes('next')) return '▲';
+              if (name.includes('node')) return '🟢';
+              if (name.includes('javascript') || name.includes('js')) return '🟨';
+              if (name.includes('typescript') || name.includes('ts')) return '🔷';
+              if (name.includes('tailwind')) return '🎨';
+              if (name.includes('css')) return '🎨';
+              if (name.includes('html')) return '🌐';
+              if (name.includes('python')) return '🐍';
+              if (name.includes('mongodb')) return '🍃';
+              if (name.includes('postgresql') || name.includes('postgres')) return '🐘';
+              if (name.includes('mysql')) return '🐬';
+              if (name.includes('redis')) return '🔴';
+              if (name.includes('docker')) return '🐳';
+              if (name.includes('aws')) return '☁️';
+              if (name.includes('vercel')) return '▲';
+              if (name.includes('firebase')) return '🔥';
+              if (name.includes('stripe')) return '💳';
+              if (name.includes('express')) return '🚂';
+              if (name.includes('vite')) return '⚡';
+              if (name.includes('webpack')) return '📦';
+              if (name.includes('git')) return '🌿';
+              return '🔧';
+            };
+
+            return (
+              <span key={index} className="tech-tag">
+                <span className="tech-icon">{getTechIcon(tech)}</span>
+                {tech}
+              </span>
+            );
+          })}
           {project.technologies.length > 4 && (
             <span className="tech-tag more">
               +{project.technologies.length - 4} more
             </span>
           )}
+        </div>
+
+        {/* Developer Credit */}
+        <div className="developer-credit">
+          <div className="developer-info">
+            <div className="developer-avatar">PO</div>
+            <span className="developer-name">Prince Obieze</span>
+          </div>
         </div>
 
         {/* Project Links */}
@@ -137,6 +185,12 @@ export default function ProjectCard({ project }) {
           overflow: hidden;
         }
 
+        .image-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+
         .image {
           width: 100%;
           height: 100%;
@@ -146,6 +200,27 @@ export default function ProjectCard({ project }) {
 
         .project-card:hover .image {
           transform: scale(1.05);
+        }
+
+        .brand-watermark {
+          position: absolute;
+          bottom: 8px;
+          right: 8px;
+          opacity: 0.9;
+        }
+
+        .brand-icon {
+          width: 24px;
+          height: 24px;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: bold;
+          font-size: 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .image-placeholder {
@@ -265,11 +340,49 @@ export default function ProjectCard({ project }) {
           border-radius: 8px;
           font-size: 0.75rem;
           font-weight: 500;
+          display: flex;
+          align-items: center;
+          gap: 4px;
         }
 
         .tech-tag.more {
           background: #f3f4f6;
           color: #6b7280;
+        }
+
+        .tech-icon {
+          font-size: 0.875rem;
+        }
+
+        .developer-credit {
+          margin-bottom: 1rem;
+          padding-top: 1rem;
+          border-top: 1px solid #e5e7eb;
+        }
+
+        .developer-info {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .developer-avatar {
+          width: 20px;
+          height: 20px;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: bold;
+          font-size: 10px;
+        }
+
+        .developer-name {
+          font-size: 0.75rem;
+          color: #6b7280;
+          font-weight: 500;
         }
 
         .project-links {

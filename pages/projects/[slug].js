@@ -161,6 +161,16 @@ export default function ProjectDetail() {
                   </span>
                 </div>
                 
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+                    PO
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Developed by</p>
+                    <p className="font-semibold text-gray-900">Prince Obieze</p>
+                  </div>
+                </div>
+                
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">
                   {project.title}
                 </h1>
@@ -215,7 +225,7 @@ export default function ProjectDetail() {
 
               {/* Project Image */}
               <div className="relative">
-                <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                <div className="aspect-video bg-gray-200 rounded-lg overflow-hidden relative">
                   <Image
                     src={project.imageUrl || '/images/placeholder-project.jpg'}
                     alt={project.title}
@@ -226,6 +236,13 @@ export default function ProjectDetail() {
                       e.target.src = '/images/placeholder-project.jpg';
                     }}
                   />
+                  {/* Brand Watermark */}
+                  <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg px-3 py-2 flex items-center gap-2">
+                    <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                      PO
+                    </div>
+                    <span className="text-white text-sm font-medium">Prince Obieze</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -349,15 +366,55 @@ export default function ProjectDetail() {
                 {/* Technologies */}
                 <div className="bg-gray-50 rounded-lg p-6 mb-8">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">Technologies Used</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-white text-gray-700 text-sm rounded-full border"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="flex flex-wrap gap-3">
+                    {project.technologies.map((tech, index) => {
+                      const getTechIcon = (techName) => {
+                        const name = techName.toLowerCase();
+                        if (name.includes('react')) return '⚛️';
+                        if (name.includes('next')) return '▲';
+                        if (name.includes('node')) return '🟢';
+                        if (name.includes('javascript') || name.includes('js')) return '🟨';
+                        if (name.includes('typescript') || name.includes('ts')) return '🔷';
+                        if (name.includes('tailwind')) return '🎨';
+                        if (name.includes('css')) return '🎨';
+                        if (name.includes('html')) return '🌐';
+                        if (name.includes('python')) return '🐍';
+                        if (name.includes('mongodb')) return '🍃';
+                        if (name.includes('postgresql') || name.includes('postgres')) return '🐘';
+                        if (name.includes('mysql')) return '🐬';
+                        if (name.includes('redis')) return '🔴';
+                        if (name.includes('docker')) return '🐳';
+                        if (name.includes('aws')) return '☁️';
+                        if (name.includes('vercel')) return '▲';
+                        if (name.includes('firebase')) return '🔥';
+                        if (name.includes('stripe')) return '💳';
+                        if (name.includes('express')) return '🚂';
+                        if (name.includes('vite')) return '⚡';
+                        if (name.includes('webpack')) return '📦';
+                        if (name.includes('git')) return '🌿';
+                        return '🔧';
+                      };
+
+                      return (
+                        <div
+                          key={index}
+                          className="flex items-center gap-2 px-3 py-2 bg-white text-gray-700 text-sm rounded-lg border hover:shadow-md transition-shadow"
+                        >
+                          <span className="text-lg">{getTechIcon(tech)}</span>
+                          <span className="font-medium">{tech}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  
+                  {/* Developer Credit */}
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div className="flex items-center gap-2 text-sm text-gray-600">
+                      <div className="w-5 h-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                        PO
+                      </div>
+                      <span>Crafted with expertise by Prince Obieze</span>
+                    </div>
                   </div>
                 </div>
 

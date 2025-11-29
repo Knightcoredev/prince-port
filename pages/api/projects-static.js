@@ -598,6 +598,75 @@ export default function handler(req, res) {
       teamSize: 'Solo Project',
       createdAt: '2024-11-15',
       updatedAt: '2024-11-28'
+    },
+    {
+      id: '11',
+      title: 'Digital Agency Platform - PixelCraft',
+      slug: 'digital-agency-platform',
+      description: 'A comprehensive full-featured digital agency management platform with CMS, client portal, project management, and admin dashboard capabilities.',
+      longDescription: `
+        A complete business management solution featuring:
+        • Multi-role dashboard system (Admin, Client, Employee views)
+        • Advanced project management with progress tracking
+        • Comprehensive client relationship management (CRM)
+        • Service catalog and pricing management
+        • Team collaboration and task assignment
+        • Real-time analytics and business intelligence
+        • File management and document sharing
+        • Integrated communication and messaging system
+        • Calendar and scheduling integration
+        • Invoice and payment processing capabilities
+        • Role-based access control and security
+        • Mobile-responsive design with PWA capabilities
+      `,
+      technologies: [
+        'React', 'React Router DOM', 'Tailwind CSS', 'Framer Motion',
+        'Zustand', 'React Hook Form', 'React Query', 'Recharts',
+        'Date-fns', 'React Hot Toast', 'Vite', 'PostCSS'
+      ],
+      category: 'Full Stack',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/digital-agency-platform',
+      liveUrl: 'http://localhost:5182',
+      imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
+      images: [
+        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&crop=center'
+      ],
+      features: [
+        'Multi-Role Dashboard System',
+        'Advanced Project Management',
+        'Client Relationship Management',
+        'Service Catalog Management',
+        'Team Collaboration Tools',
+        'Real-time Analytics',
+        'File Management System',
+        'Communication Hub',
+        'Calendar Integration',
+        'Invoice & Payment Processing',
+        'Role-based Security',
+        'Mobile PWA Ready'
+      ],
+      challenges: [
+        'Building complex multi-role user interface',
+        'Implementing real-time data synchronization',
+        'Creating scalable project management workflows',
+        'Designing intuitive admin and client portals',
+        'Optimizing performance for large datasets'
+      ],
+      learnings: [
+        'Advanced React patterns and state management',
+        'Complex UI/UX design for business applications',
+        'Multi-tenant architecture considerations',
+        'Business intelligence and analytics implementation',
+        'Enterprise-level security and access control'
+      ],
+      duration: '6 weeks',
+      teamSize: 'Solo Project',
+      createdAt: '2024-11-20',
+      updatedAt: '2024-11-28'
     }
   ];
 

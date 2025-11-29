@@ -224,6 +224,14 @@ function SimpleProjectsGrid() {
                   <div className="text-4xl mb-2">💻</div>
                   <div className="text-sm font-medium">{project.category}</div>
                 </div>
+                
+                {/* Brand Watermark */}
+                <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center gap-1">
+                  <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
+                    PO
+                  </div>
+                  <span className="text-white text-xs font-medium">Prince Obieze</span>
+                </div>
               </div>
               
               <div className="p-6">
@@ -255,14 +263,44 @@ function SimpleProjectsGrid() {
                 {/* Technologies */}
                 <div className="mb-4">
                   <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 4).map((tech, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    {project.technologies.slice(0, 4).map((tech, index) => {
+                      const getTechIcon = (techName) => {
+                        const name = techName.toLowerCase();
+                        if (name.includes('react')) return '⚛️';
+                        if (name.includes('next')) return '▲';
+                        if (name.includes('node')) return '🟢';
+                        if (name.includes('javascript') || name.includes('js')) return '🟨';
+                        if (name.includes('typescript') || name.includes('ts')) return '🔷';
+                        if (name.includes('tailwind')) return '🎨';
+                        if (name.includes('css')) return '🎨';
+                        if (name.includes('html')) return '🌐';
+                        if (name.includes('python')) return '🐍';
+                        if (name.includes('mongodb')) return '🍃';
+                        if (name.includes('postgresql') || name.includes('postgres')) return '🐘';
+                        if (name.includes('mysql')) return '🐬';
+                        if (name.includes('redis')) return '🔴';
+                        if (name.includes('docker')) return '🐳';
+                        if (name.includes('aws')) return '☁️';
+                        if (name.includes('vercel')) return '▲';
+                        if (name.includes('firebase')) return '🔥';
+                        if (name.includes('stripe')) return '💳';
+                        if (name.includes('express')) return '🚂';
+                        if (name.includes('vite')) return '⚡';
+                        if (name.includes('webpack')) return '📦';
+                        if (name.includes('git')) return '🌿';
+                        return '🔧';
+                      };
+
+                      return (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded flex items-center gap-1"
+                        >
+                          <span>{getTechIcon(tech)}</span>
+                          {tech}
+                        </span>
+                      );
+                    })}
                     {project.technologies.length > 4 && (
                       <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
                         +{project.technologies.length - 4} more
@@ -406,6 +444,14 @@ export default function ProjectsIndex() {
           </div>
           
           <div className="hero-content">
+            <div className="developer-intro">
+              <div className="developer-avatar">PO</div>
+              <div className="developer-info">
+                <h2>Prince Obieze</h2>
+                <p>Full Stack Developer & Software Engineer</p>
+              </div>
+            </div>
+            
             <div className="hero-text">
               <h1>Professional Projects</h1>
               <p>
@@ -538,6 +584,42 @@ export default function ProjectsIndex() {
           margin: 0 auto;
           padding: 0 2rem;
           text-align: center;
+        }
+
+        .developer-intro {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .developer-avatar {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: bold;
+          font-size: 1.5rem;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .developer-info h2 {
+          font-size: 1.8rem;
+          font-weight: 700;
+          margin: 0;
+          color: white;
+        }
+
+        .developer-info p {
+          font-size: 1rem;
+          margin: 0;
+          opacity: 0.9;
+          color: rgba(255, 255, 255, 0.8);
         }
 
         .hero-text h1 {
