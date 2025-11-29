@@ -363,6 +363,241 @@ export default function handler(req, res) {
       teamSize: 'Solo Project',
       createdAt: '2024-06-01',
       updatedAt: '2024-08-15'
+    },
+    {
+      id: '7',
+      title: 'Business Consulting Website',
+      slug: 'business-consulting-website',
+      description: 'A professional business consulting website showcasing services, expertise, and client testimonials. Features modern design, lead generation forms, and conversion optimization.',
+      longDescription: `
+        A comprehensive business consulting website featuring:
+        • Professional service showcase with detailed descriptions
+        • Client testimonials and success stories
+        • Lead generation and contact forms
+        • Service booking and consultation scheduling
+        • Team member profiles and expertise areas
+        • Case studies and portfolio showcase
+        • Blog integration for thought leadership
+        • SEO-optimized content and structure
+      `,
+      technologies: [
+        'React', 'Next.js', 'Tailwind CSS', 'Framer Motion',
+        'React Hook Form', 'EmailJS', 'Vercel', 'Google Analytics'
+      ],
+      category: 'Business Website',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/business-consulting',
+      liveUrl: 'http://localhost:5178',
+      imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
+      images: [
+        'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop&crop=center'
+      ],
+      features: [
+        'Professional Service Showcase',
+        'Client Testimonials',
+        'Lead Generation Forms',
+        'Consultation Booking',
+        'Team Profiles',
+        'Case Studies',
+        'Blog Integration',
+        'SEO Optimization'
+      ],
+      challenges: [
+        'Creating compelling business-focused content',
+        'Optimizing for lead generation and conversions',
+        'Building trust through professional design',
+        'Implementing effective call-to-action strategies'
+      ],
+      learnings: [
+        'Business website best practices',
+        'Conversion rate optimization',
+        'Professional web design principles',
+        'Lead generation strategies'
+      ],
+      duration: '2 weeks',
+      teamSize: 'Solo Project',
+      createdAt: '2024-11-01',
+      updatedAt: '2024-11-28'
+    },
+    {
+      id: '8',
+      title: 'SaaS Landing Page - CloudSync',
+      slug: 'saas-landing-page',
+      description: 'A high-converting SaaS landing page with modern animations, pricing tables, feature showcases, and optimized conversion funnels for cloud collaboration software.',
+      longDescription: `
+        A conversion-optimized SaaS landing page featuring:
+        • Hero section with compelling value proposition
+        • Feature showcase with interactive demonstrations
+        • Social proof and customer testimonials
+        • Tiered pricing with comparison tables
+        • Free trial signup with minimal friction
+        • Product screenshots and video demos
+        • FAQ section addressing common concerns
+        • Mobile-first responsive design
+      `,
+      technologies: [
+        'React', 'Next.js', 'Tailwind CSS', 'Framer Motion',
+        'React Hook Form', 'Stripe Integration', 'Analytics',
+        'A/B Testing Tools'
+      ],
+      category: 'Landing Page',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/saas-landing',
+      liveUrl: 'http://localhost:5179',
+      imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
+      images: [
+        'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&crop=center'
+      ],
+      features: [
+        'Compelling Hero Section',
+        'Interactive Feature Demos',
+        'Social Proof Integration',
+        'Pricing Comparison Tables',
+        'Frictionless Signup Flow',
+        'Product Demonstrations',
+        'FAQ Section',
+        'Mobile Optimization'
+      ],
+      challenges: [
+        'Optimizing conversion rates and user flow',
+        'Creating engaging animations and interactions',
+        'Building trust with potential customers',
+        'Balancing information density with simplicity'
+      ],
+      learnings: [
+        'Landing page optimization techniques',
+        'SaaS marketing best practices',
+        'Conversion funnel design',
+        'A/B testing methodologies'
+      ],
+      duration: '2 weeks',
+      teamSize: 'Solo Project',
+      createdAt: '2024-11-05',
+      updatedAt: '2024-11-28'
+    },
+    {
+      id: '9',
+      title: 'Fine Dining Restaurant Website',
+      slug: 'restaurant-website',
+      description: 'An elegant restaurant website featuring online reservations, menu showcase, chef profiles, and immersive dining experience presentation for upscale establishments.',
+      longDescription: `
+        A sophisticated restaurant website featuring:
+        • Elegant design reflecting fine dining atmosphere
+        • Interactive menu with detailed dish descriptions
+        • Online reservation system with table management
+        • Chef and staff profiles with culinary backgrounds
+        • Photo gallery showcasing ambiance and cuisine
+        • Customer reviews and testimonials
+        • Event hosting and private dining information
+        • Location, hours, and contact information
+      `,
+      technologies: [
+        'React', 'Next.js', 'Tailwind CSS', 'Google Fonts',
+        'Reservation API', 'Image Optimization', 'SEO',
+        'Google Maps Integration'
+      ],
+      category: 'Business Website',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/restaurant-website',
+      liveUrl: 'http://localhost:5180',
+      imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&crop=center',
+      images: [
+        'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop&crop=center'
+      ],
+      features: [
+        'Elegant Visual Design',
+        'Interactive Menu Display',
+        'Online Reservation System',
+        'Chef Profiles',
+        'Photo Gallery',
+        'Customer Reviews',
+        'Event Information',
+        'Location Integration'
+      ],
+      challenges: [
+        'Creating an atmosphere that matches fine dining',
+        'Designing intuitive reservation flow',
+        'Showcasing culinary artistry through design',
+        'Balancing elegance with functionality'
+      ],
+      learnings: [
+        'Hospitality industry web design',
+        'Luxury brand presentation online',
+        'Reservation system integration',
+        'Food photography optimization'
+      ],
+      duration: '2 weeks',
+      teamSize: 'Solo Project',
+      createdAt: '2024-11-10',
+      updatedAt: '2024-11-28'
+    },
+    {
+      id: '10',
+      title: 'Fitness Landing Page - FitPro',
+      slug: 'fitness-landing-page',
+      description: 'A high-energy fitness landing page with transformation stories, workout programs, and membership conversion optimization for personal training and fitness coaching.',
+      longDescription: `
+        A conversion-focused fitness landing page featuring:
+        • Motivational hero section with transformation promise
+        • Before/after success stories and testimonials
+        • Workout program showcase with detailed descriptions
+        • Trainer profiles and credentials
+        • Membership pricing with clear value propositions
+        • Free trial offers and lead magnets
+        • Progress tracking and app integration previews
+        • Community and support system highlights
+      `,
+      technologies: [
+        'React', 'Next.js', 'Tailwind CSS', 'Framer Motion',
+        'Video Integration', 'Form Handling', 'Payment Processing',
+        'Analytics Tracking'
+      ],
+      category: 'Landing Page',
+      featured: true,
+      status: 'completed',
+      githubUrl: 'https://github.com/Knightcoredev/fitness-landing',
+      liveUrl: 'http://localhost:5181',
+      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center',
+      images: [
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop&crop=center',
+        'https://images.unsplash.com/photo-1549476464-37392f717541?w=800&h=600&fit=crop&crop=center'
+      ],
+      features: [
+        'Motivational Hero Design',
+        'Success Story Showcases',
+        'Program Descriptions',
+        'Trainer Credentials',
+        'Pricing Optimization',
+        'Free Trial Offers',
+        'App Integration Previews',
+        'Community Highlights'
+      ],
+      challenges: [
+        'Creating motivational and inspiring design',
+        'Showcasing transformation results effectively',
+        'Building trust in fitness expertise',
+        'Optimizing for mobile fitness enthusiasts'
+      ],
+      learnings: [
+        'Fitness industry marketing strategies',
+        'Motivational design principles',
+        'Health and wellness conversion optimization',
+        'Mobile-first fitness user experience'
+      ],
+      duration: '2 weeks',
+      teamSize: 'Solo Project',
+      createdAt: '2024-11-15',
+      updatedAt: '2024-11-28'
     }
   ];
 
