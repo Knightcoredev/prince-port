@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 export default function CourseCard({ course }) {
   const progressPercentage = (course.completedLessons / course.totalLessons) * 100;
@@ -97,17 +96,13 @@ export default function CourseCard({ course }) {
 
         <div className="mt-4">
           {course.isEnrolled ? (
-            <Link href={`/courses/${course.id}/learn`}>
-              <a className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center block font-medium">
-                Continue Learning
-              </a>
-            </Link>
+            <button className="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center block font-medium">
+              Continue Learning
+            </button>
           ) : (
-            <Link href={`/courses/${course.id}`}>
-              <a className="w-full bg-gray-100 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors text-center block font-medium">
-                View Course
-              </a>
-            </Link>
+            <button className="w-full bg-gray-100 text-gray-900 py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors text-center block font-medium">
+              View Course
+            </button>
           )}
         </div>
       </div>
