@@ -94,7 +94,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/task-management',
-      liveUrl: 'http://localhost:5175',
+      liveUrl: 'https://task-management-dashboard-373papgzr-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center',
@@ -153,7 +153,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/social-analytics',
-      liveUrl: 'http://localhost:5176',
+      liveUrl: 'https://social-media-analytics-phaknwdj9-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center',
@@ -212,7 +212,7 @@ export default function handler(req, res) {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/real-estate-platform',
-      liveUrl: 'http://localhost:5173',
+      liveUrl: 'https://real-estate-management-lymcn5xhl-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center',
@@ -271,7 +271,7 @@ export default function handler(req, res) {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/lms-platform',
-      liveUrl: 'http://localhost:5177',
+      liveUrl: 'https://learning-management-system-4fscddb1d.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center',
@@ -330,7 +330,7 @@ export default function handler(req, res) {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/crypto-tracker',
-      liveUrl: 'http://localhost:5174',
+      liveUrl: 'https://crypto-portfolio-tracker-5vovyxj7p-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center',
@@ -388,7 +388,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/business-consulting',
-      liveUrl: 'http://localhost:5178',
+      liveUrl: 'https://business-consulting-website-js8av8bgb.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
@@ -447,7 +447,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/saas-landing',
-      liveUrl: 'http://localhost:5179',
+      liveUrl: 'https://saas-landing-page-oe4vx6hrg-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
@@ -506,7 +506,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/restaurant-website',
-      liveUrl: 'http://localhost:5180',
+      liveUrl: 'https://restaurant-website-h1h4754x5-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&crop=center',
@@ -565,7 +565,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/fitness-landing',
-      liveUrl: 'http://localhost:5181',
+      liveUrl: 'https://fitness-landing-page-7sn5ny8zk-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop&crop=center',
@@ -628,7 +628,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/digital-agency-platform',
-      liveUrl: 'http://localhost:5182',
+      liveUrl: 'https://digital-agency-platform-12cx9n5bn-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop&crop=center',
