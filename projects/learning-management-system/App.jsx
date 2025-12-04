@@ -170,6 +170,9 @@ function App() {
               <h1 className="text-xl font-semibold text-gray-900">EduPlatform</h1>
             </div>
             <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1.5 rounded-lg font-bold text-sm tracking-wider shadow-md">
+                P.F.O
+              </div>
               <select 
                 value={userRole} 
                 onChange={(e) => setUserRole(e.target.value)}

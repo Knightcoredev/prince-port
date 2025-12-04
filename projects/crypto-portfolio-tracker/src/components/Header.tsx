@@ -13,9 +13,14 @@ export default function Header({ totalValue, dailyChange, dailyChangePercent }: 
     <header className="bg-white shadow-sm border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
-          <div>
-            <h1 className="text-3xl font-bold text-gray-900">CryptoTracker</h1>
-            <p className="text-gray-600">Your cryptocurrency portfolio dashboard</p>
+          <div className="flex items-center space-x-4">
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">CryptoTracker</h1>
+              <p className="text-gray-600">Your cryptocurrency portfolio dashboard</p>
+            </div>
+            <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1.5 rounded-lg font-bold text-sm tracking-wider shadow-md">
+              P.F.O
+            </div>
           </div>
           
           <div className="mt-4 sm:mt-0 text-right">

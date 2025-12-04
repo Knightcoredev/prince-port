@@ -211,6 +211,9 @@ function App() {
               <p className="text-gray-600">Manage your real estate portfolio</p>
             </div>
             <div className="flex items-center space-x-4">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1.5 rounded-lg font-bold text-sm tracking-wider shadow-md">
+                P.F.O
+              </div>
               <button className="p-2 text-gray-600 hover:text-gray-900">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5v-5zM4 19h6v-2H4v2zM4 15h8v-2H4v2zM4 11h10V9H4v2zM4 7h12V5H4v2z" />

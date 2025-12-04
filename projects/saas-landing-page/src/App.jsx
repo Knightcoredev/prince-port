@@ -423,7 +423,15 @@ function App() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">&copy; 2024 CloudSync. All rights reserved.</p>
+            <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+              <p className="text-gray-400">&copy; 2024 CloudSync. All rights reserved.</p>
+              <div className="flex items-center space-x-2">
+                <span className="text-gray-500 text-sm">Crafted by</span>
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-bold text-lg tracking-wider shadow-lg">
+                  P.F.O
+                </div>
+              </div>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-gray-400 hover:text-white">Privacy</a>
               <a href="#" className="text-gray-400 hover:text-white">Terms</a>
