@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
-import ProductGrid from '../components/ProductGrid';
 import Hero from '../components/Hero';
 import Categories from '../components/Categories';
 import FeaturedProducts from '../components/FeaturedProducts';

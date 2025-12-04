@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cartItems } = useCart();
 
-  const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemCount = cartItems ? cartItems.reduce((total, item) => total + item.quantity, 0) : 0;
 
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
