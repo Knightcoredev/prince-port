@@ -35,7 +35,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/ecommerce-platform',
-      liveUrl: 'http://localhost:3000/projects/ecommerce-platform',
+      liveUrl: 'https://ecommerce-platform-git-main-providers-projects-b6fd42fe.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center',
@@ -388,7 +388,7 @@ export default function handler(req, res) {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/business-consulting',
-      liveUrl: 'https://business-consulting-website-js8av8bgb.vercel.app',
+      liveUrl: 'https://business-consulting-website-p940pazfy.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
       images: [
         'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=600&fit=crop&crop=center',
