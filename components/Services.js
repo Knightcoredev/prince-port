@@ -13,7 +13,7 @@ export default function Services() {
           <div key={it.title} className="p-6 bg-white rounded-lg shadow-sm">
             <h3 className="font-semibold">{it.title}</h3>
             <p className="mt-2 text-gray-600">{it.desc}</p>
-            <p className="mt-4 text-sm text-gray-500">From ₦15,000</p>
+            <p className="mt-4 text-sm text-gray-500">From $50</p>
           </div>
         ))}
       </div>
