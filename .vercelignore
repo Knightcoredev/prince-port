@@ -1,0 +1,6 @@
+projects/
+projects/**/vercel.json
+watermarking/
+.kiro/
+*.md
+!README.md
