@@ -1,0 +1,180 @@
+{
+  "sessionId": "watermark_1765315652056_llnt7rm28",
+  "startTime": "2025-12-09T21:27:32.058Z",
+  "endTime": "2025-12-09T21:27:33.715Z",
+  "logEntries": [
+    {
+      "timestamp": "2025-12-09T21:27:33.335Z",
+      "level": "error",
+      "message": "Error: C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg - Recovery failed: Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+      "details": {
+        "file": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+        "error": "Recovery failed: Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+        "category": "Processing Error",
+        "timestamp": "2025-12-09T21:27:33.335Z",
+        "context": {
+          "errorType": "recovery_failure",
+          "originalError": "UNKNOWN: unknown error, open 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "recoveryError": "Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "attempt": 1
+        },
+        "troubleshooting": {
+          "category": "Processing Error",
+          "suggestions": [
+            "Check the error message for specific details",
+            "Verify the image file is accessible and valid",
+            "Try processing the image individually to isolate the issue",
+            "Check system resources and permissions"
+          ]
+        }
+      },
+      "sessionId": "watermark_1765315652056_llnt7rm28"
+    },
+    {
+      "timestamp": "2025-12-09T21:27:33.503Z",
+      "level": "error",
+      "message": "Error: C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg - Recovery failed: Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+      "details": {
+        "file": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+        "error": "Recovery failed: Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+        "category": "Processing Error",
+        "timestamp": "2025-12-09T21:27:33.503Z",
+        "context": {
+          "errorType": "recovery_failure",
+          "originalError": "UNKNOWN: unknown error, open 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "recoveryError": "Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "attempt": 2
+        },
+        "troubleshooting": {
+          "category": "Processing Error",
+          "suggestions": [
+            "Check the error message for specific details",
+            "Verify the image file is accessible and valid",
+            "Try processing the image individually to isolate the issue",
+            "Check system resources and permissions"
+          ]
+        }
+      },
+      "sessionId": "watermark_1765315652056_llnt7rm28"
+    },
+    {
+      "timestamp": "2025-12-09T21:27:33.691Z",
+      "level": "success",
+      "message": "Processed: C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+      "details": {
+        "processingResult": {
+          "success": true,
+          "imagePath": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+          "formatInfo": {
+            "format": "jpeg",
+            "extension": "jpg",
+            "supported": true,
+            "hasTransparency": false,
+            "isVector": false,
+            "sharpFormat": "jpeg"
+          },
+          "consistentConfig": {
+            "dimensions": {
+              "width": 173,
+              "height": 81,
+              "fontSize": 54,
+              "textWidth": 151.2,
+              "textHeight": 64.8,
+              "fontSizeRatio": 0.05
+            },
+            "position": {
+              "top": 977,
+              "left": 886,
+              "padding": 21,
+              "paddingRatio": 0.019462465245597776
+            },
+            "styling": {
+              "textColor": "rgba(255, 255, 255, 0.8)",
+              "shadowColor": "rgba(0, 0, 0, 0.5)",
+              "shadowBlur": 1,
+              "shadowOffset": {
+                "x": 1,
+                "y": 1
+              },
+              "scaleFactor": 0.7496526973650309
+            },
+            "pathInfo": {
+              "originalPath": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+              "directory": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public",
+              "filename": "Profile",
+              "extension": ".jpg",
+              "fullPath": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg"
+            },
+            "imageMetadata": {
+              "width": 1080,
+              "height": 1079,
+              "format": "jpeg"
+            },
+            "timestamp": "2025-12-09T21:27:33.505Z"
+          },
+          "preservationResult": {
+            "isPreserved": true,
+            "issues": [],
+            "originalMetadata": {
+              "format": "jpeg",
+              "size": 14278,
+              "width": 1080,
+              "height": 1079,
+              "space": "srgb",
+              "channels": 3,
+              "depth": "uchar",
+              "density": 72,
+              "chromaSubsampling": "4:2:0",
+              "isProgressive": true,
+              "hasProfile": false,
+              "hasAlpha": false
+            },
+            "currentMetadata": {
+              "format": "jpeg",
+              "width": 1080,
+              "height": 1079,
+              "space": "srgb",
+              "channels": 3,
+              "depth": "uchar",
+              "density": 72,
+              "chromaSubsampling": "4:2:0",
+              "isProgressive": true,
+              "hasProfile": false,
+              "hasAlpha": false
+            }
+          },
+          "originalMetadata": {
+            "format": "jpeg",
+            "size": 14278,
+            "width": 1080,
+            "height": 1079,
+            "space": "srgb",
+            "channels": 3,
+            "depth": "uchar",
+            "density": 72,
+            "chromaSubsampling": "4:2:0",
+            "isProgressive": true,
+            "hasProfile": false,
+            "hasAlpha": false
+          },
+          "processedAt": "2025-12-09T21:27:33.686Z"
+        }
+      },
+      "sessionId": "watermark_1765315652056_llnt7rm28"
+    }
+  ],
+  "statistics": {
+    "formatBreakdown": {
+      "jpg": 3
+    },
+    "sizeBreakdown": {},
+    "processingTimes": [],
+    "errorCategories": {
+      "Processing Error": 2
+    },
+    "skippedReasons": {},
+    "averageProcessingTime": 0,
+    "largestImage": null,
+    "smallestImage": null
+  }
+}

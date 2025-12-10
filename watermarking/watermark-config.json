@@ -1,0 +1,12 @@
+{
+  "text": "P.F.O",
+  "position": "bottom-right",
+  "padding": 20,
+  "fontSize": "5%",
+  "minFontSize": 24,
+  "color": "rgba(255, 255, 255, 0.8)",
+  "shadow": {
+    "blur": 2,
+    "color": "rgba(0, 0, 0, 0.5)"
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Backup directories
+.backups/
+
+# Temporary files
+*.tmp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Reports
+watermarking-report.json
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Test coverage
+coverage/

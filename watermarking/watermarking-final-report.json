@@ -1,0 +1,182 @@
+{
+  "reportMetadata": {
+    "reportId": "final_report_1765315653696",
+    "timestamp": "2025-12-09T21:27:33.695Z",
+    "reportType": "Final Processing Report",
+    "version": "1.0.0",
+    "generatedBy": "P.F.O Image Watermarking System"
+  },
+  "executiveSummary": {
+    "overallStatus": "SUCCESS_WITH_WARNINGS",
+    "successRate": "100.0%",
+    "qualityScore": 0,
+    "processingEfficiency": "Excellent",
+    "keyAchievements": [
+      "Successfully watermarked 1 images"
+    ],
+    "criticalIssues": 0,
+    "warnings": 0
+  },
+  "processingResults": {
+    "totalImages": 1,
+    "processed": 1,
+    "skipped": 0,
+    "errors": 2,
+    "processingTime": 1636,
+    "errorDetails": [
+      {
+        "file": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+        "error": "Recovery failed: Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+        "category": "Processing Error",
+        "timestamp": "2025-12-09T21:27:33.335Z",
+        "context": {
+          "errorType": "recovery_failure",
+          "originalError": "UNKNOWN: unknown error, open 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "recoveryError": "Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "attempt": 1
+        },
+        "troubleshooting": {
+          "category": "Processing Error",
+          "suggestions": [
+            "Check the error message for specific details",
+            "Verify the image file is accessible and valid",
+            "Try processing the image individually to isolate the issue",
+            "Check system resources and permissions"
+          ]
+        }
+      },
+      {
+        "file": "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg",
+        "error": "Recovery failed: Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+        "category": "Processing Error",
+        "timestamp": "2025-12-09T21:27:33.503Z",
+        "context": {
+          "errorType": "recovery_failure",
+          "originalError": "UNKNOWN: unknown error, open 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "recoveryError": "Failed to restore C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg: UNKNOWN: unknown error, copyfile 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\watermarking\\.backups\\2025-12-09T21-27-33-013Z\\Profile.jpg' -> 'C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg'",
+          "attempt": 2
+        },
+        "troubleshooting": {
+          "category": "Processing Error",
+          "suggestions": [
+            "Check the error message for specific details",
+            "Verify the image file is accessible and valid",
+            "Try processing the image individually to isolate the issue",
+            "Check system resources and permissions"
+          ]
+        }
+      }
+    ],
+    "processedImages": [
+      "C:\\Users\\NIGHTSTUDIOS\\Downloads\\prince-port\\public\\Profile.jpg"
+    ],
+    "consistencyResults": null,
+    "referenceValidation": {
+      "pathValidation": {
+        "pathsUnchanged": true,
+        "changedPaths": []
+      },
+      "referenceValidation": {
+        "valid": true,
+        "brokenReferences": [],
+        "summary": {
+          "totalReferences": 0,
+          "validReferences": 0,
+          "brokenReferences": 0,
+          "processedImages": 1
+        }
+      },
+      "referenceSummary": {
+        "totalImages": 32,
+        "totalReferences": 115,
+        "referencesByType": {
+          "src_attribute": 9,
+          "string_literal": 65,
+          "import": 6,
+          "require": 2,
+          "json_value": 33
+        },
+        "imagesByProject": {}
+      }
+    },
+    "statistics": {
+      "formatBreakdown": {
+        "jpg": 3
+      },
+      "sizeBreakdown": {},
+      "processingTimes": [],
+      "errorCategories": {
+        "Processing Error": 2
+      },
+      "skippedReasons": {},
+      "averageProcessingTime": 0,
+      "largestImage": null,
+      "smallestImage": null
+    },
+    "processingTimeFormatted": "1.6s",
+    "successRate": "100.0%",
+    "sessionDuration": "1.6s",
+    "throughput": "36.7 images/min",
+    "qualityMetrics": {
+      "errorRate": "200.00%",
+      "skipRate": "0.00%",
+      "successRate": "100.00%"
+    }
+  },
+  "validationResults": {
+    "criticalIssues": 0,
+    "warnings": 0,
+    "imageIntegrity": {
+      "status": "PASS",
+      "issues": []
+    },
+    "referencePreservation": {
+      "status": "PASS",
+      "issues": []
+    }
+  },
+  "deploymentReadiness": {
+    "isReady": false,
+    "confidenceLevel": "LOW",
+    "blockers": [
+      "High error rate (200.0%) exceeds deployment threshold"
+    ],
+    "warnings": [],
+    "recommendation": "Resolve critical issues before deployment"
+  },
+  "recommendations": {
+    "priority": [
+      {
+        "title": "Investigate High Error Rate",
+        "description": "Error rate of 200.0% exceeds acceptable threshold",
+        "action": "Review error patterns and implement fixes for common failure modes",
+        "impact": "High",
+        "effort": "High"
+      }
+    ],
+    "optimization": [],
+    "maintenance": [
+      {
+        "title": "Implement Error Monitoring",
+        "description": "Set up monitoring for recurring error patterns",
+        "action": "Create automated alerts for common error categories",
+        "impact": "Medium",
+        "effort": "Low"
+      }
+    ]
+  },
+  "systemHealth": {
+    "timestamp": "2025-12-09T21:27:33.702Z",
+    "memoryUsage": {
+      "rss": 83898368,
+      "heapTotal": 16228352,
+      "heapUsed": 10225744,
+      "external": 2298593,
+      "arrayBuffers": 64493
+    },
+    "uptime": 1.9969636,
+    "nodeVersion": "v20.19.5",
+    "platform": "win32",
+    "status": "HEALTHY"
+  }
+}
