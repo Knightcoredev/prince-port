@@ -146,7 +146,7 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-white shadow-sm">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-        <div className="text-xl font-semibold">Prince F. Obieze</div>
+        <div className="text-xl font-semibold">[Your Name]</div>
         <div className="space-x-6 hidden md:flex">
           <a href="#services" className="hover:text-indigo-600">Services</a>
           <a href="#projects" className="hover:text-indigo-600">Projects</a>
@@ -167,7 +167,7 @@ export default function Hero() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
       <div className="flex-1">
-        <h1 className="text-4xl md:text-5xl font-bold">Hi — I'm Prince F. Obieze. I build web apps & automation tools.</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Hi — I'm [Your Name]. I build web apps & automation tools.</h1>
         <p className="mt-4 text-gray-600">Full-stack developer (React, Next.js, Node). I help businesses build fast, responsive websites and automation that saves time and boosts revenue.</p>
 
         <div className="mt-6 flex gap-3">
@@ -282,7 +282,7 @@ export default function Contact() {
 export default function Footer() {
   return (
     <footer className="w-full bg-white border-t mt-12">
-      <div className="max-w-5xl mx-auto px-6 py-6 text-center text-sm text-gray-500">© {new Date().getFullYear()} Prince F. Obieze — Built with Next.js & Tailwind</div>
+      <div className="max-w-5xl mx-auto px-6 py-6 text-center text-sm text-gray-500">© {new Date().getFullYear()} [Your Name] — Built with Next.js & Tailwind</div>
     </footer>
   )
 }
@@ -302,7 +302,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Prince F. Obieze — Full-stack Developer</title>
+        <title>[Your Name] — Full-stack Developer</title>
         <meta name="description" content="Full-stack web developer: React, Next.js, Node, Tailwind." />
       </Head>
 

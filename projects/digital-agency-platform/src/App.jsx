@@ -197,7 +197,7 @@ function App() {
 
         <div className="flex items-center space-x-4">
           <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1.5 rounded-lg font-bold text-sm tracking-wider shadow-md">
-            P.F.O
+            [Your Initials]
           </div>
           
           <select 

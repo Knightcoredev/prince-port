@@ -50,7 +50,7 @@ export default function SimpleProjects() {
   return (
     <>
       <Head>
-        <title>Projects - Prince F. Obieze | Full Stack Developer</title>
+        <title>Projects - [Your Name] | Full Stack Developer</title>
         <meta name="description" content="A showcase of my full-stack development projects and professional experience." />
       </Head>
 

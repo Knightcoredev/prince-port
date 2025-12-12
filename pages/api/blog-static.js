@@ -14,7 +14,7 @@ export default function handler(req, res) {
       id: '1',
       title: 'Welcome to My Portfolio',
       slug: 'welcome-to-my-portfolio',
-      excerpt: 'Welcome to my portfolio! I\'m Prince F. Obieze, a passionate full-stack developer specializing in modern web technologies.',
+      excerpt: 'Welcome to my portfolio! I\'m [Your Name], a passionate full-stack developer specializing in modern web technologies.',
       content: `
         <h2>Hello and Welcome!</h2>
         <p>I'm excited to share my journey as a full-stack developer with you. This portfolio showcases my skills, projects, and passion for creating innovative web solutions.</p>

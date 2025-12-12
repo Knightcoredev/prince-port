@@ -42,7 +42,7 @@ export default function SimpleBlog() {
   return (
     <>
       <Head>
-        <title>Blog - Prince F. Obieze | Full Stack Developer</title>
+        <title>Blog - [Your Name] | Full Stack Developer</title>
         <meta name="description" content="Insights, tutorials, and thoughts on web development, technology, and design." />
       </Head>
 

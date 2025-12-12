@@ -69,7 +69,7 @@ export default function BlogPostPage() {
     return (
       <>
         <Head>
-          <title>Blog Post Not Found - Prince F. Obieze</title>
+          <title>Blog Post Not Found - [Your Name]</title>
         </Head>
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
           <div className="text-center">
@@ -98,7 +98,7 @@ export default function BlogPostPage() {
   return (
     <>
       <Head>
-        <title>{post.title} - Prince F. Obieze Blog</title>
+        <title>{post.title} - [Your Name] Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta name="keywords" content={post.tags?.join(', ')} />
         
@@ -156,7 +156,7 @@ export default function BlogPostPage() {
                   day: 'numeric'
                 })}</span>
                 <span>⏱️ {post.readingTime} min read</span>
-                <span>👤 Prince F. Obieze</span>
+                <span>👤 [Your Name]</span>
               </div>
             </header>
 

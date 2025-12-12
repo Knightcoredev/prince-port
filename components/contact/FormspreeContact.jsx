@@ -55,7 +55,7 @@ export default function FormspreeContact() {
 
   const contactInfo = {
     email: 'devcore556@gmail.com',
-    linkedin: 'https://linkedin.com/in/prince-obieze',
+    linkedin: 'https://linkedin.com/in/your-profile',
     github: 'https://github.com/Knightcoredev'
   };
 

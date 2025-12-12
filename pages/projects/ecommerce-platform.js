@@ -5,7 +5,7 @@ export default function EcommercePlatformDemo() {
   return (
     <>
       <Head>
-        <title>E-Commerce Platform Demo - Prince F. Obieze</title>
+        <title>E-Commerce Platform Demo - [Your Name]</title>
         <meta name="description" content="Live demo of the e-commerce platform with shopping cart, product catalog, and payment processing." />
       </Head>
 

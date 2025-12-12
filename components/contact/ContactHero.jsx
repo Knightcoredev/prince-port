@@ -36,7 +36,7 @@ export default function ContactHero() {
               📧 Send Email Now
             </a>
             <a 
-              href="https://linkedin.com/in/prince-obieze"
+              href="https://linkedin.com/in/your-profile"
               target="_blank"
               rel="noopener noreferrer"
               className="cta-secondary"
@@ -51,7 +51,7 @@ export default function ContactHero() {
             <div className="card-header">
               <div className="avatar">PO</div>
               <div className="info">
-                <h3>Prince F. Obieze</h3>
+                <h3>[Your Name]</h3>
                 <p>Full Stack Developer</p>
               </div>
             </div>

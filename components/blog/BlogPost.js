@@ -44,7 +44,7 @@ export default function BlogPost({ post, relatedPosts = [] }) {
   return (
     <>
       <Head>
-        <title>{post.title} - Prince F. Obieze</title>
+        <title>{post.title} - [Your Name]</title>
         <meta name="description" content={post.excerpt} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.excerpt} />

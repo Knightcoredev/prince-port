@@ -60,7 +60,7 @@ export default function ProjectsDebug() {
   return (
     <>
       <Head>
-        <title>Projects Debug - Prince F. Obieze</title>
+        <title>Projects Debug - [Your Name]</title>
       </Head>
 
       <main className="min-h-screen bg-gray-50 py-12">

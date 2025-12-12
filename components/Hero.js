@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-10">
       <div className="flex-1">
-        <h1 className="text-4xl md:text-5xl font-bold">Hi — I'm Prince F. Obieze. I build web apps & automation tools.</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Hi — I'm [Your Name]. I build web apps & automation tools.</h1>
         <p className="mt-4 text-gray-600">Full-stack developer (React, Next.js, Node). I help businesses build fast, responsive websites and automation that saves time and boosts revenue.</p>
 
         <div className="mt-6 flex gap-3">

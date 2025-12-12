@@ -44,7 +44,7 @@ export default function Dashboard() {
           <p className="text-gray-600">Welcome back! Here's what's happening with your projects.</p>
         </div>
         <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-lg font-bold text-lg tracking-wider shadow-md">
-          P.F.O
+          [Your Initials]
         </div>
       </div>
 

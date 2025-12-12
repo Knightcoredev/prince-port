@@ -19,7 +19,7 @@ export default function Header({ totalValue, dailyChange, dailyChangePercent }: 
               <p className="text-gray-600">Your cryptocurrency portfolio dashboard</p>
             </div>
             <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1.5 rounded-lg font-bold text-sm tracking-wider shadow-md">
-              P.F.O
+              [Your Initials]
             </div>
           </div>
           

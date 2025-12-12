@@ -230,7 +230,7 @@ function SimpleProjectsGrid() {
                   <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
                     PO
                   </div>
-                  <span className="text-white text-xs font-medium">Prince Obieze</span>
+                  <span className="text-white text-xs font-medium">[Your Name]</span>
                 </div>
               </div>
               
@@ -362,7 +362,7 @@ export default function ProjectsIndex() {
   return (
     <>
       <Head>
-        <title>Portfolio Projects - Prince F. Obieze | Full Stack Developer</title>
+        <title>Portfolio Projects - [Your Name] | Full Stack Developer</title>
         <meta 
           name="description" 
           content="Explore my professional development projects including e-commerce platforms, task management systems, social media analytics, and more. Full-stack solutions built with modern technologies." 
@@ -373,14 +373,14 @@ export default function ProjectsIndex() {
         />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Professional Development Projects - Prince F. Obieze" />
+        <meta property="og:title" content="Professional Development Projects - [Your Name]" />
         <meta property="og:description" content="Showcase of full-stack development projects and professional applications" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/projects" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Professional Development Projects - Prince F. Obieze" />
+        <meta name="twitter:title" content="Professional Development Projects - [Your Name]" />
         <meta name="twitter:description" content="Showcase of full-stack development projects and professional applications" />
         
         {/* Structured Data for Projects */}
@@ -391,10 +391,10 @@ export default function ProjectsIndex() {
               "@context": "https://schema.org",
               "@type": "CollectionPage",
               "name": "Professional Development Projects",
-              "description": "Portfolio of full-stack development projects by Prince F. Obieze",
+              "description": "Portfolio of full-stack development projects by [Your Name]",
               "author": {
                 "@type": "Person",
-                "name": "Prince F. Obieze",
+                "name": "[Your Name]",
                 "jobTitle": "Full Stack Developer",
                 "email": "devcore556@gmail.com",
                 "url": "https://yourdomain.com"
@@ -447,7 +447,7 @@ export default function ProjectsIndex() {
             <div className="developer-intro">
               <div className="developer-avatar">PO</div>
               <div className="developer-info">
-                <h2>Prince Obieze</h2>
+                <h2>[Your Name]</h2>
                 <p>Full Stack Developer & Software Engineer</p>
               </div>
             </div>

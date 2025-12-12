@@ -86,19 +86,19 @@ export default function ProjectDetail() {
   return (
     <>
       <Head>
-        <title>{project.title} - Prince F. Obieze | Full Stack Developer</title>
+        <title>{project.title} - [Your Name] | Full Stack Developer</title>
         <meta name="description" content={project.description} />
         <meta name="keywords" content={project.technologies.join(', ')} />
         
         {/* Open Graph */}
-        <meta property="og:title" content={`${project.title} - Prince F. Obieze`} />
+        <meta property="og:title" content={`${project.title} - [Your Name]`} />
         <meta property="og:description" content={project.description} />
         <meta property="og:type" content="article" />
         <meta property="og:image" content={project.imageUrl} />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${project.title} - Prince F. Obieze`} />
+        <meta name="twitter:title" content={`${project.title} - [Your Name]`} />
         <meta name="twitter:description" content={project.description} />
         <meta name="twitter:image" content={project.imageUrl} />
         
@@ -113,7 +113,7 @@ export default function ProjectDetail() {
               "description": project.description,
               "author": {
                 "@type": "Person",
-                "name": "Prince F. Obieze"
+                "name": "[Your Name]"
               },
               "dateCreated": project.createdAt,
               "dateModified": project.updatedAt,
@@ -167,7 +167,7 @@ export default function ProjectDetail() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600">Developed by</p>
-                    <p className="font-semibold text-gray-900">Prince Obieze</p>
+                    <p className="font-semibold text-gray-900">[Your Name]</p>
                   </div>
                 </div>
                 
@@ -241,7 +241,7 @@ export default function ProjectDetail() {
                     <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
                       PO
                     </div>
-                    <span className="text-white text-sm font-medium">Prince Obieze</span>
+                    <span className="text-white text-sm font-medium">[Your Name]</span>
                   </div>
                 </div>
               </div>
@@ -413,7 +413,7 @@ export default function ProjectDetail() {
                       <div className="w-5 h-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
                         PO
                       </div>
-                      <span>Crafted with expertise by Prince Obieze</span>
+                      <span>Crafted with expertise by [Your Name]</span>
                     </div>
                   </div>
                 </div>

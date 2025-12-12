@@ -12,15 +12,15 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact - Prince F. Obieze | Full Stack Developer</title>
+        <title>Contact - [Your Name] | Full Stack Developer</title>
         <meta 
           name="description" 
-          content="Get in touch with Prince F. Obieze for job opportunities, freelance projects, or collaborations. Quick response guaranteed!" 
+          content="Get in touch with [Your Name] for job opportunities, freelance projects, or collaborations. Quick response guaranteed!" 
         />
         <meta name="keywords" content="contact, hire developer, job opportunity, freelance, collaboration" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Contact Prince F. Obieze - Full Stack Developer" />
+        <meta property="og:title" content="Contact [Your Name] - Full Stack Developer" />
         <meta property="og:description" content="Ready to work together? Let's discuss your next project!" />
         <meta property="og:type" content="website" />
         
@@ -31,12 +31,12 @@ export default function Contact() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Prince F. Obieze",
+              "name": "[Your Name]",
               "jobTitle": "Full Stack Developer",
               "email": "devcore556@gmail.com",
               "url": "https://yourdomain.com",
               "sameAs": [
-                "https://linkedin.com/in/prince-obieze",
+                "https://linkedin.com/in/your-profile",
                 "https://github.com/Knightcoredev"
               ],
               "contactPoint": {
