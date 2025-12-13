@@ -14,8 +14,12 @@ export default function Hero() {
       </div>
 
       <div className="flex-1 flex justify-center">
-        <div className="w-56 h-56 rounded-xl overflow-hidden shadow-lg">
+        <div className="w-56 h-56 rounded-xl overflow-hidden shadow-lg relative">
           <Image src="/Profile.jpg" alt="Prince F. Obieze" width={224} height={224} />
+          {/* P.F.O Watermark */}
+          <div className="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm text-white px-2 py-1 rounded text-xs font-bold tracking-wider z-10">
+            P.F.O
+          </div>
         </div>
       </div>
     </section>
