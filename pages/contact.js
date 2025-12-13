@@ -12,10 +12,10 @@ export default function Contact() {
   return (
     <>
       <Head>
-        <title>Contact - [Your Name] | Full Stack Developer</title>
+        <title>Contact - Prince F. Obieze | Full Stack Developer</title>
         <meta 
           name="description" 
-          content="Get in touch with [Your Name] for job opportunities, freelance projects, or collaborations. Quick response guaranteed!" 
+          content="Get in touch with Prince F. Obieze for job opportunities, freelance projects, or collaborations. Quick response guaranteed!" 
         />
         <meta name="keywords" content="contact, hire developer, job opportunity, freelance, collaboration" />
         

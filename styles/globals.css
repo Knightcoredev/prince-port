@@ -141,14 +141,44 @@ body {
   position: relative;
 }
 
-/* Image styling */
+/* Image styling with P.F.O watermark */
 img {
   position: relative;
+}
+
+img::after {
+  content: 'P.F.O';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .image-container {
   position: relative;
   display: inline-block;
+}
+
+.image-container::after {
+  content: 'P.F.O';
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .prose-lg {

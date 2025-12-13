@@ -30,7 +30,7 @@ function SimpleProjectsGrid() {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/ecommerce-platform',
-      liveUrl: 'http://localhost:3000/projects/ecommerce-platform',
+      liveUrl: 'https://ecommerce-platform-knightcoredev.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&crop=center'
     },
     {
@@ -43,7 +43,7 @@ function SimpleProjectsGrid() {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/task-management',
-      liveUrl: 'http://localhost:5175',
+      liveUrl: 'https://task-management-dashboard-knightcoredev.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=600&fit=crop&crop=center'
     },
     {
@@ -56,7 +56,7 @@ function SimpleProjectsGrid() {
       featured: true,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/social-analytics',
-      liveUrl: 'http://localhost:5176',
+      liveUrl: 'https://social-media-analytics-knightcoredev.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&crop=center'
     },
     {
@@ -69,7 +69,7 @@ function SimpleProjectsGrid() {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/real-estate-platform',
-      liveUrl: 'http://localhost:5173',
+      liveUrl: 'https://real-estate-management-knightcoredev.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&crop=center'
     },
     {
@@ -82,7 +82,7 @@ function SimpleProjectsGrid() {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/lms-platform',
-      liveUrl: 'http://localhost:5177',
+      liveUrl: 'https://learning-management-system-knightcoredev.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center'
     },
     {
@@ -95,7 +95,7 @@ function SimpleProjectsGrid() {
       featured: false,
       status: 'completed',
       githubUrl: 'https://github.com/Knightcoredev/crypto-tracker',
-      liveUrl: 'http://localhost:5174',
+      liveUrl: 'https://crypto-portfolio-tracker-knightcoredev.vercel.app',
       imageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop&crop=center'
     }
   ];
@@ -230,7 +230,7 @@ function SimpleProjectsGrid() {
                   <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
                     PO
                   </div>
-                  <span className="text-white text-xs font-medium">[Your Name]</span>
+                  <span className="text-white text-xs font-medium">Prince F. Obieze</span>
                 </div>
               </div>
               
@@ -362,7 +362,7 @@ export default function ProjectsIndex() {
   return (
     <>
       <Head>
-        <title>Portfolio Projects - [Your Name] | Full Stack Developer</title>
+        <title>Portfolio Projects - Prince F. Obieze | Full Stack Developer</title>
         <meta 
           name="description" 
           content="Explore my professional development projects including e-commerce platforms, task management systems, social media analytics, and more. Full-stack solutions built with modern technologies." 
@@ -373,14 +373,14 @@ export default function ProjectsIndex() {
         />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Professional Development Projects - [Your Name]" />
+        <meta property="og:title" content="Professional Development Projects - Prince F. Obieze" />
         <meta property="og:description" content="Showcase of full-stack development projects and professional applications" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourdomain.com/projects" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Professional Development Projects - [Your Name]" />
+        <meta name="twitter:title" content="Professional Development Projects - Prince F. Obieze" />
         <meta name="twitter:description" content="Showcase of full-stack development projects and professional applications" />
         
         {/* Structured Data for Projects */}
@@ -391,10 +391,10 @@ export default function ProjectsIndex() {
               "@context": "https://schema.org",
               "@type": "CollectionPage",
               "name": "Professional Development Projects",
-              "description": "Portfolio of full-stack development projects by [Your Name]",
+              "description": "Portfolio of full-stack development projects by Prince F. Obieze",
               "author": {
                 "@type": "Person",
-                "name": "[Your Name]",
+                "name": "Prince F. Obieze",
                 "jobTitle": "Full Stack Developer",
                 "email": "devcore556@gmail.com",
                 "url": "https://yourdomain.com"
@@ -447,7 +447,7 @@ export default function ProjectsIndex() {
             <div className="developer-intro">
               <div className="developer-avatar">PO</div>
               <div className="developer-info">
-                <h2>[Your Name]</h2>
+                <h2>Prince F. Obieze</h2>
                 <p>Full Stack Developer & Software Engineer</p>
               </div>
             </div>

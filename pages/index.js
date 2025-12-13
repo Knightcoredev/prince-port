@@ -11,22 +11,22 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <Head>
-        <title>[Your Name] — Full-stack Developer</title>
+        <title>Prince F. Obieze — Full-stack Developer</title>
         <meta name="description" content="Full-stack web developer specializing in React, Next.js, Node.js, and modern web technologies. Available for freelance projects and consulting." />
-        <meta name="keywords" content="full-stack developer, React, Next.js, Node.js, JavaScript, web development, freelance" />
-        <meta name="author" content="[Your Name]" />
+        <meta name="keywords" content="full-stack developer, React, Next.js, Node.js, JavaScript, web development, freelance, Prince Obieze" />
+        <meta name="author" content="Prince F. Obieze" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yourportfolio.com/" />
-        <meta property="og:title" content="[Your Name] — Full-stack Developer" />
+        <meta property="og:title" content="Prince F. Obieze — Full-stack Developer" />
         <meta property="og:description" content="Full-stack web developer specializing in React, Next.js, Node.js, and modern web technologies." />
         <meta property="og:image" content="/profile.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://yourportfolio.com/" />
-        <meta property="twitter:title" content="[Your Name] — Full-stack Developer" />
+        <meta property="twitter:title" content="Prince F. Obieze — Full-stack Developer" />
         <meta property="twitter:description" content="Full-stack web developer specializing in React, Next.js, Node.js, and modern web technologies." />
         <meta property="twitter:image" content="/profile.jpg" />
 
